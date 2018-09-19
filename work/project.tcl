@@ -5,7 +5,7 @@ set device xc6slx9-2tqg144
 if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
 create_project $projName "$projDir/$projName" -part $device
 set_property design_mode RTL [get_filesets sources_1]
-set verilogSources [list "C:/Users/77900/OneDrive/Documents/mojo/minihardware_2_7/work/verilog/mojo_top_0.v" "C:/Users/77900/OneDrive/Documents/mojo/minihardware_2_7/work/verilog/reset_conditioner_1.v" "C:/Users/77900/OneDrive/Documents/mojo/minihardware_2_7/work/verilog/fsm_tester_2.v"]
+set verilogSources [list "C:/Users/77900/OneDrive/Documents/mojo/minihardware_2_7/work/verilog/mojo_top_0.v" "C:/Users/77900/OneDrive/Documents/mojo/minihardware_2_7/work/verilog/reset_conditioner_1.v" "C:/Users/77900/OneDrive/Documents/mojo/minihardware_2_7/work/verilog/fsm_tester_2.v" "C:/Users/77900/OneDrive/Documents/mojo/minihardware_2_7/work/verilog/display_3.v" "C:/Users/77900/OneDrive/Documents/mojo/minihardware_2_7/work/verilog/char_4.v" "C:/Users/77900/OneDrive/Documents/mojo/minihardware_2_7/work/verilog/decoder_5.v"]
 import_files -fileset [get_filesets sources_1] -force -norecurse $verilogSources
 set ucfSources [list "C:/Users/77900/OneDrive/Documents/mojo/minihardware_2_7/constraint/pins.ucf" "C:/Program\ Files/Mojo\ IDE/library/components/io_shield.ucf" "C:/Program\ Files/Mojo\ IDE/library/components/mojo.ucf"]
 import_files -fileset [get_filesets constrs_1] -force -norecurse $ucfSources

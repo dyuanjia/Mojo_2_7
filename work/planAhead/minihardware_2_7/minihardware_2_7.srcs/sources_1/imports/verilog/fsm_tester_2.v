@@ -14,38 +14,61 @@ module fsm_tester_2 (
     input [23:0] io_dip,
     output reg a,
     output reg b,
-    output reg cin
+    output reg cin,
+    input cout,
+    input s
   );
   
   
   
   localparam DIV = 5'h1a;
   
-  localparam MANUAL_states = 1'd0;
-  localparam AUTO_states = 1'd1;
+  localparam MANUAL_states = 2'd0;
+  localparam AUTO_states = 2'd1;
+  localparam ERROR_states = 2'd2;
   
-  reg M_states_d, M_states_q = MANUAL_states;
+  reg [1:0] M_states_d, M_states_q = MANUAL_states;
   reg [28:0] M_ctr_d, M_ctr_q = 1'h0;
+  reg [25:0] M_buffer_d, M_buffer_q = 1'h0;
+  wire [7-1:0] M_seg_seg;
+  wire [4-1:0] M_seg_sel;
+  reg [16-1:0] M_seg_chars;
+  display_3 seg (
+    .clk(clk),
+    .rst(rst),
+    .chars(M_seg_chars),
+    .seg(M_seg_seg),
+    .sel(M_seg_sel)
+  );
   
   always @* begin
     M_states_d = M_states_q;
+    M_buffer_d = M_buffer_q;
     M_ctr_d = M_ctr_q;
     
     io_led = 24'h000000;
-    io_seg = 8'hff;
-    io_sel = 4'hf;
+    io_seg = ~M_seg_seg;
+    io_sel = ~M_seg_sel;
     a = 1'h0;
     b = 1'h0;
     cin = 1'h0;
+    M_seg_chars = 16'h0000;
     
     case (M_states_q)
       MANUAL_states: begin
         M_ctr_d = 1'h1;
+        M_buffer_d = 1'h1;
+        M_buffer_d = M_buffer_q + 1'h1;
         a = io_dip[0+1+0-:1];
         b = io_dip[0+0+0-:1];
         cin = io_dip[0+2+0-:1];
         io_led[0+0+0-:1] = (io_dip[0+1+0-:1] ^ io_dip[0+0+0-:1]) ^ io_dip[0+2+0-:1];
         io_led[0+1+0-:1] = ((io_dip[0+1+0-:1] ^ io_dip[0+0+0-:1]) & io_dip[0+2+0-:1]) | (io_dip[0+1+0-:1] & io_dip[0+0+0-:1]);
+        if (M_buffer_q == 1'h0) begin
+          if (cout != (((io_dip[0+1+0-:1] ^ io_dip[0+0+0-:1]) & io_dip[0+2+0-:1]) | (io_dip[0+1+0-:1] & io_dip[0+0+0-:1])) || s != ((io_dip[0+1+0-:1] ^ io_dip[0+0+0-:1]) ^ io_dip[0+2+0-:1])) begin
+            M_states_d = ERROR_states;
+          end
+        end
         if (io_button[1+0-:1]) begin
           M_states_d = AUTO_states;
         end
@@ -53,9 +76,24 @@ module fsm_tester_2 (
       AUTO_states: begin
         io_led[8+0+2-:3] = M_ctr_q[26+2-:3];
         M_ctr_d = M_ctr_q + 1'h1;
+        M_buffer_d = 26'h1ffffff;
+        M_buffer_d = M_buffer_q + 1'h1;
+        a = M_ctr_q[27+0-:1];
+        b = M_ctr_q[26+0-:1];
+        cin = M_ctr_q[28+0-:1];
+        io_led[16+0+0-:1] = (M_ctr_q[27+0-:1] ^ M_ctr_q[26+0-:1]) ^ M_ctr_q[28+0-:1];
+        io_led[16+1+0-:1] = ((M_ctr_q[27+0-:1] ^ M_ctr_q[26+0-:1]) & M_ctr_q[28+0-:1]) | (M_ctr_q[27+0-:1] & M_ctr_q[26+0-:1]);
+        if (M_buffer_q == 1'h0) begin
+          if (cout != (((M_ctr_q[27+0-:1] ^ M_ctr_q[26+0-:1]) & M_ctr_q[28+0-:1]) | (M_ctr_q[27+0-:1] & M_ctr_q[26+0-:1])) || s != ((M_ctr_q[27+0-:1] ^ M_ctr_q[26+0-:1]) ^ M_ctr_q[28+0-:1])) begin
+            M_states_d = ERROR_states;
+          end
+        end
         if (M_ctr_q == 1'h0) begin
           M_states_d = MANUAL_states;
         end
+      end
+      ERROR_states: begin
+        M_seg_chars = 16'h1234;
       end
     endcase
   end
@@ -63,9 +101,11 @@ module fsm_tester_2 (
   always @(posedge clk) begin
     if (rst == 1'b1) begin
       M_ctr_q <= 1'h0;
+      M_buffer_q <= 1'h0;
       M_states_q <= 1'h0;
     end else begin
       M_ctr_q <= M_ctr_d;
+      M_buffer_q <= M_buffer_d;
       M_states_q <= M_states_d;
     end
   end
