@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-OL9UF4J::  Wed Sep 19 20:05:19 2018
+DESKTOP-OL9UF4J::  Wed Sep 19 21:09:31 2018
 
 par -intstyle pa -w -mt on mojo_top_0.ncd mojo_top_0_routed.ncd 
 
@@ -27,21 +27,21 @@ Device Utilization Summary:
 
 Slice Logic Utilization:
   Number of Slice Registers:                     0 out of  11,440    0%
-  Number of Slice LUTs:                          1 out of   5,720    1%
-    Number used as logic:                        1 out of   5,720    1%
-      Number using O6 output only:               0
+  Number of Slice LUTs:                          2 out of   5,720    1%
+    Number used as logic:                        2 out of   5,720    1%
+      Number using O6 output only:               2
       Number using O5 output only:               0
-      Number using O5 and O6:                    1
+      Number using O5 and O6:                    0
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   1,440    0%
 
 Slice Logic Distribution:
-  Number of occupied Slices:                     1 out of   1,430    1%
+  Number of occupied Slices:                     2 out of   1,430    1%
   Number of MUXCYs used:                         0 out of   2,860    0%
-  Number of LUT Flip Flop pairs used:            1
-    Number with an unused Flip Flop:             1 out of       1  100%
-    Number with an unused LUT:                   0 out of       1    0%
-    Number of fully used LUT-FF pairs:           0 out of       1    0%
+  Number of LUT Flip Flop pairs used:            2
+    Number with an unused Flip Flop:             2 out of       2  100%
+    Number with an unused LUT:                   0 out of       2    0%
+    Number of fully used LUT-FF pairs:           0 out of       2    0%
     Number of slice register sites lost
       to control set restrictions:               0 out of  11,440    0%
 
@@ -124,29 +124,29 @@ WARNING:Par:288 - The signal io_dip(16)_IBUF has no load.  PAR will not attempt 
 Starting Router
 
 
-Phase  1  : 48 unrouted;      REAL time: 2 secs 
+Phase  1  : 50 unrouted;      REAL time: 2 secs 
 
-Phase  2  : 47 unrouted;      REAL time: 2 secs 
+Phase  2  : 50 unrouted;      REAL time: 2 secs 
 
-Phase  3  : 0 unrouted;      REAL time: 4 secs 
+Phase  3  : 7 unrouted;      REAL time: 2 secs 
 
-Phase  4  : 0 unrouted; (Par is working to improve performance)     REAL time: 5 secs 
+Phase  4  : 7 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
 Updating file: mojo_top_0_routed.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 5 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 5 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 5 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 5 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 5 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 5 secs 
-Total REAL time to Router completion: 5 secs 
-Total CPU time to Router completion: 5 secs 
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
+Total REAL time to Router completion: 3 secs 
+Total CPU time to Router completion: 3 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -167,8 +167,8 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 34 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 5 secs 
-Total CPU time to PAR completion: 5 secs 
+Total REAL time to PAR completion: 3 secs 
+Total CPU time to PAR completion: 3 secs 
 
 Peak Memory Usage:  280 MB
 

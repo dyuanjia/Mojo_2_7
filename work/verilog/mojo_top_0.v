@@ -35,6 +35,20 @@ module mojo_top_0 (
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
+  wire [24-1:0] M_tester_io_led;
+  wire [8-1:0] M_tester_io_seg;
+  wire [4-1:0] M_tester_io_sel;
+  reg [5-1:0] M_tester_io_button;
+  reg [24-1:0] M_tester_io_dip;
+  fsm_tester_2 tester (
+    .clk(clk),
+    .rst(~rst_n),
+    .io_button(M_tester_io_button),
+    .io_dip(M_tester_io_dip),
+    .io_led(M_tester_io_led),
+    .io_seg(M_tester_io_seg),
+    .io_sel(M_tester_io_sel)
+  );
   
   always @* begin
     M_reset_cond_in = ~rst_n;
@@ -46,7 +60,9 @@ module mojo_top_0 (
     io_led = 24'h000000;
     io_seg = 8'hff;
     io_sel = 4'hf;
-    io_led[0+0+0-:1] = (io_dip[0+1+0-:1] ^ io_dip[0+0+0-:1]) ^ io_dip[0+2+0-:1];
-    io_led[0+1+0-:1] = ((io_dip[0+1+0-:1] ^ io_dip[0+0+0-:1]) & io_dip[0+2+0-:1]) | (io_dip[0+1+0-:1] & io_dip[0+0+0-:1]);
+    M_tester_io_button = io_button[1+0-:1];
+    M_tester_io_dip = io_dip;
+    io_led[0+0+0-:1] = M_tester_io_led[0+0+0-:1];
+    io_led[0+1+0-:1] = M_tester_io_led[0+1+0-:1];
   end
 endmodule

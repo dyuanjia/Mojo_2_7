@@ -1,0 +1,39 @@
+module fsm_tester (
+    input clk,  // clock
+    input rst,  // reset
+    output io_led [3][8],   // LEDs on IO Shield
+    output io_seg [8],      // 7-segment LEDs on IO Shield
+    output io_sel [4],      // Digit select on IO Shield
+    input io_button [5],    // 5 buttons on IO Shield
+    input io_dip [3][8]     // DIP switches on IO Shield
+  ) {
+  
+  const NUM_CASES = 8;
+ 
+  .clk(clk) {
+    .rst(rst) {
+      fsm states = {MANUAL, AUTO};
+    }
+    dff count[$clog2(NUM_CASES)]; // min bits to store NUM_CASES - 1
+  }
+
+  always {
+    io_led = 3x{{8h00}};    // turn LEDs off
+    io_seg = 8hff;          // turn segments off
+    io_sel = 4hf;           // select no digits
+    
+    case (states.q) {
+      states.MANUAL:
+        // a = io_dip[0][1]; b = io_dip[0][0]; c = io_dip[0][2]
+        io_led[0][0] = (io_dip[0][1] ^ io_dip[0][0]) ^ io_dip[0][2];                                   // Sum
+        io_led[0][1] = ((io_dip[0][1] ^ io_dip[0][0]) & io_dip[0][2]) | (io_dip[0][1] & io_dip[0][0]); // Carry-out
+        if (io_button[1])
+          states.d = states.AUTO;
+ 
+      states.AUTO:
+        count.d = count.q + 1;
+        if (count.q == NUM_CASES - 1)
+          states.d = states.MANUAL;
+    }
+  }
+}

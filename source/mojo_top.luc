@@ -24,6 +24,10 @@ module mojo_top (
     // The reset conditioner is used to synchronize the reset signal to the FPGA
     // clock. This ensures the entire FPGA comes out of reset at the same time.
     reset_conditioner reset_cond;
+    
+    .rst(~rst_n){
+      fsm_tester tester;    // instance of FSM tester
+    }
   }
   
   always {
@@ -39,8 +43,9 @@ module mojo_top (
     io_seg = 8hff;          // turn segments off
     io_sel = 4hf;           // select no digits
     
-    // a = io_dip[0][1]; b = io_dip[0][0]; c = io_dip[0][2]
-    io_led[0][0] = (io_dip[0][1] ^ io_dip[0][0]) ^ io_dip[0][2];                                   // Sum
-    io_led[0][1] = ((io_dip[0][1] ^ io_dip[0][0]) & io_dip[0][2]) | (io_dip[0][1] & io_dip[0][0]); // Carry-out
+    tester.io_button = io_button[1];
+    tester.io_dip = io_dip;
+    io_led[0][0] = tester.io_led[0][0];
+    io_led[0][1] = tester.io_led[0][1];
   }
 }

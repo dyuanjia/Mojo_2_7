@@ -8,7 +8,7 @@ Target Device  : xc6slx9
 Target Package : tqg144
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Wed Sep 19 20:05:15 2018
+Mapped Date    : Wed Sep 19 21:09:27 2018
 
 Design Summary
 --------------
@@ -16,21 +16,21 @@ Number of errors:      0
 Number of warnings:    6
 Slice Logic Utilization:
   Number of Slice Registers:                     0 out of  11,440    0%
-  Number of Slice LUTs:                          1 out of   5,720    1%
-    Number used as logic:                        1 out of   5,720    1%
-      Number using O6 output only:               0
+  Number of Slice LUTs:                          2 out of   5,720    1%
+    Number used as logic:                        2 out of   5,720    1%
+      Number using O6 output only:               2
       Number using O5 output only:               0
-      Number using O5 and O6:                    1
+      Number using O5 and O6:                    0
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   1,440    0%
 
 Slice Logic Distribution:
-  Number of occupied Slices:                     1 out of   1,430    1%
+  Number of occupied Slices:                     2 out of   1,430    1%
   Number of MUXCYs used:                         0 out of   2,860    0%
-  Number of LUT Flip Flop pairs used:            1
-    Number with an unused Flip Flop:             1 out of       1  100%
-    Number with an unused LUT:                   0 out of       1    0%
-    Number of fully used LUT-FF pairs:           0 out of       1    0%
+  Number of LUT Flip Flop pairs used:            2
+    Number with an unused Flip Flop:             2 out of       2  100%
+    Number with an unused LUT:                   0 out of       2    0%
+    Number of fully used LUT-FF pairs:           0 out of       2    0%
     Number of slice register sites lost
       to control set restrictions:               0 out of  11,440    0%
 
@@ -67,7 +67,7 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                0.13
+Average Fanout of Non-Clock Nets:                0.21
 
 Peak Memory Usage:  295 MB
 Total REAL time to MAP completion:  3 secs 

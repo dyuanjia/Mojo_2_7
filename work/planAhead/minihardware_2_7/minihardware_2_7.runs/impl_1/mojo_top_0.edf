@@ -4,7 +4,7 @@
   (keywordmap (keywordlevel 0))
 (status
  (written
-  (timeStamp 2018 09 19 20 05 09)
+  (timeStamp 2018 09 19 21 09 21)
   (program "PlanAhead" (version "14.7"))
   (comment "Built on 'Fri Sep 27 19:31:35 MDT 2013'")
   (comment "Built by 'xbuild'")
@@ -74,6 +74,41 @@
   (Library mojo_top_0_lib
     (edifLevel 0)
     (technology (numberDefinition ))
+   (cell fsm_tester_2 (celltype GENERIC)
+     (view view_1 (viewtype NETLIST)
+       (interface 
+        (port (array (rename io_dip "io_dip[2:0]") 3) (direction INPUT))
+        (port (rename io_led_1_ "io_led[1]") (direction OUTPUT))
+       )
+       (contents
+         (instance (rename io_dip_1__io_dip_1__OR_1_o1 "io_dip[1]_io_dip[1]_OR_1_o1") (viewref netlist (cellref LUT3 (libraryref hdi_primitives)))
+           (property XSTLIB (boolean (true)))
+           (property PK_HLUTNM (string "___XLNM___0___tester/io_dip[1]_io_dip[1]_OR_1_o1"))
+           (property INIT (string "8'hE8"))
+         )
+         (net (rename io_dip_1_ "io_dip[1]") (joined
+          (portref I0 (instanceref io_dip_1__io_dip_1__OR_1_o1))
+          (portref (member io_dip 1))
+          )
+         )
+         (net (rename io_dip_2_ "io_dip[2]") (joined
+          (portref I1 (instanceref io_dip_1__io_dip_1__OR_1_o1))
+          (portref (member io_dip 0))
+          )
+         )
+         (net (rename io_dip_0_ "io_dip[0]") (joined
+          (portref I2 (instanceref io_dip_1__io_dip_1__OR_1_o1))
+          (portref (member io_dip 2))
+          )
+         )
+         (net (rename io_led_1_ "io_led[1]") (joined
+          (portref O (instanceref io_dip_1__io_dip_1__OR_1_o1))
+          (portref io_led_1_)
+          )
+         )
+       )
+     )
+   )
    (cell mojo_top_0 (celltype GENERIC)
      (view view_1 (viewtype NETLIST)
        (interface 
@@ -102,14 +137,9 @@
          (instance XST_GND (viewref netlist (cellref GND (libraryref hdi_primitives)))
            (property XSTLIB (boolean (true)))
          )
-         (instance (rename io_led_1_1 "io_led<1>1") (viewref netlist (cellref LUT3 (libraryref hdi_primitives)))
-           (property XSTLIB (boolean (true)))
-           (property PK_HLUTNM (string "___XLNM___0___io_led<1>1"))
-           (property INIT (string "8'hE8"))
-         )
          (instance (rename io_led_0_1 "io_led<0>1") (viewref netlist (cellref LUT3 (libraryref hdi_primitives)))
            (property XSTLIB (boolean (true)))
-           (property PK_HLUTNM (string "___XLNM___0___io_led<1>1"))
+           (property PK_HLUTNM (string "___XLNM___0___tester/io_dip[1]_io_dip[1]_OR_1_o1"))
            (property INIT (string "8'h96"))
          )
          (instance io_dip_2_IBUF (viewref netlist (cellref IBUF (libraryref hdi_primitives)))
@@ -330,30 +360,35 @@
            (property XSTLIB (boolean (true)))
            (property CAPACITANCE (string "DONT_CARE"))
          )
+         (instance tester (viewref view_1 (cellref fsm_tester_2 (libraryref mojo_top_0_lib)))
+           (property NLW_UNIQUE_ID (integer 0))
+           (property NLW_MACRO_TAG (integer 1))
+           (property NLW_MACRO_ALIAS (string "fsm_tester_2_tester"))
+         )
          (net io_dip_2_IBUF (joined
-          (portref I1 (instanceref io_led_1_1))
           (portref I0 (instanceref io_led_0_1))
           (portref O (instanceref io_dip_2_IBUF))
+          (portref (member io_dip 0) (instanceref tester))
           )
          )
          (net io_dip_1_IBUF (joined
-          (portref I0 (instanceref io_led_1_1))
           (portref I2 (instanceref io_led_0_1))
           (portref O (instanceref io_dip_1_IBUF))
+          (portref (member io_dip 1) (instanceref tester))
           )
          )
          (net io_dip_0_IBUF (joined
-          (portref I2 (instanceref io_led_1_1))
           (portref I1 (instanceref io_led_0_1))
           (portref O (instanceref io_dip_0_IBUF))
+          (portref (member io_dip 2) (instanceref tester))
           )
          )
-         (net io_led_1_OBUF (joined
-          (portref O (instanceref io_led_1_1))
+         (net (rename M_tester_io_led_1_ "M_tester_io_led[1]") (joined
           (portref I (instanceref io_led_1_OBUF))
+          (portref io_led_1_ (instanceref tester))
           )
          )
-         (net io_led_0_OBUF (joined
+         (net (rename M_tester_io_led_0_ "M_tester_io_led[0]") (joined
           (portref O (instanceref io_led_0_1))
           (portref I (instanceref io_led_0_OBUF))
           )
