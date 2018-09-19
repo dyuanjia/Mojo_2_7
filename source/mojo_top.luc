@@ -39,6 +39,8 @@ module mojo_top (
     io_seg = 8hff;          // turn segments off
     io_sel = 4hf;           // select no digits
     
-    io_led[0][0] = io_dip[0][0];
+    // a = io_dip[0][1]; b = io_dip[0][0]; c = io_dip[0][2]
+    io_led[0][0] = (io_dip[0][1] ^ io_dip[0][0]) ^ io_dip[0][2];                                   // Sum
+    io_led[0][1] = ((io_dip[0][1] ^ io_dip[0][0]) & io_dip[0][2]) | (io_dip[0][1] & io_dip[0][0]); // Carry-out
   }
 }

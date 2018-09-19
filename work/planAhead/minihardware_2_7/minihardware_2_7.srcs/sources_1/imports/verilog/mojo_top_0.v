@@ -46,6 +46,7 @@ module mojo_top_0 (
     io_led = 24'h000000;
     io_seg = 8'hff;
     io_sel = 4'hf;
-    io_led[0+0+0-:1] = io_dip[0+0+0-:1];
+    io_led[0+0+0-:1] = (io_dip[0+1+0-:1] ^ io_dip[0+0+0-:1]) ^ io_dip[0+2+0-:1];
+    io_led[0+1+0-:1] = ((io_dip[0+1+0-:1] ^ io_dip[0+0+0-:1]) & io_dip[0+2+0-:1]) | (io_dip[0+1+0-:1] & io_dip[0+0+0-:1]);
   end
 endmodule

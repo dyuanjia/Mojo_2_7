@@ -75,7 +75,7 @@ WARNING:Xst:2972 - "C:/Users/77900/OneDrive/Documents/mojo/minihardware_2_7/work
 Synthesizing Unit <mojo_top_0>.
     Related source file is "C:/Users/77900/OneDrive/Documents/mojo/minihardware_2_7/work/planAhead/minihardware_2_7/minihardware_2_7.srcs/sources_1/imports/verilog/mojo_top_0.v".
 WARNING:Xst:647 - Input <io_button> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <io_dip<23:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <io_dip<23:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -99,6 +99,8 @@ HDL Synthesis Report
 Macro Statistics
 # Tristates                                            : 6
  1-bit tristate buffer                                 : 6
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
 
 =========================================================================
 
@@ -110,7 +112,10 @@ Macro Statistics
 =========================================================================
 Advanced HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
+
 =========================================================================
 
 =========================================================================
@@ -150,11 +155,12 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2
+# BELS                             : 4
 #      GND                         : 1
+#      LUT3                        : 2
 #      VCC                         : 1
-# IO Buffers                       : 51
-#      IBUF                        : 1
+# IO Buffers                       : 53
+#      IBUF                        : 3
 #      OBUF                        : 44
 #      OBUFT                       : 6
 
@@ -165,17 +171,19 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
+ Number of Slice LUTs:                    2  out of   5720     0%  
+    Number used as Logic:                 2  out of   5720     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      0
-   Number with an unused Flip Flop:       0  out of      0         
-   Number with an unused LUT:             0  out of      0         
-   Number of fully used LUT-FF pairs:     0  out of      0         
+ Number of LUT Flip Flop pairs used:      2
+   Number with an unused Flip Flop:       2  out of      2   100%  
+   Number with an unused LUT:             0  out of      2     0%  
+   Number of fully used LUT-FF pairs:     0  out of      2     0%  
    Number of unique control sets:         0
 
 IO Utilization: 
  Number of IOs:                          87
- Number of bonded IOBs:                  51  out of    102    50%  
+ Number of bonded IOBs:                  53  out of    102    51%  
 
 Specific Feature Utilization:
 
@@ -210,7 +218,7 @@ Speed Grade: -2
    Minimum period: No path found
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: No path found
-   Maximum combinational path delay: 4.921ns
+   Maximum combinational path delay: 6.110ns
 
 Timing Details:
 ---------------
@@ -218,21 +226,22 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 1 / 1
+  Total number of paths / destination ports: 6 / 2
 -------------------------------------------------------------------------
-Delay:               4.921ns (Levels of Logic = 2)
-  Source:            io_dip<0> (PAD)
-  Destination:       io_led<0> (PAD)
+Delay:               6.110ns (Levels of Logic = 3)
+  Source:            io_dip<1> (PAD)
+  Destination:       io_led<1> (PAD)
 
-  Data Path: io_dip<0> to io_led<0>
+  Data Path: io_dip<1> to io_led<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   0.681  io_dip_0_IBUF (io_led_0_OBUF)
-     OBUF:I->O                 2.912          io_led_0_OBUF (io_led<0>)
+     IBUF:I->O             2   1.328   0.954  io_dip_1_IBUF (io_dip_1_IBUF)
+     LUT3:I0->O            1   0.235   0.681  io_led<1>1 (io_led_1_OBUF)
+     OBUF:I->O                 2.912          io_led_1_OBUF (io_led<1>)
     ----------------------------------------
-    Total                      4.921ns (4.240ns logic, 0.681ns route)
-                                       (86.2% logic, 13.8% route)
+    Total                      6.110ns (4.475ns logic, 1.635ns route)
+                                       (73.2% logic, 26.8% route)
 
 =========================================================================
 
@@ -247,7 +256,7 @@ Total CPU time to Xst completion: 2.89 secs
  
 --> 
 
-Total memory usage is 246436 kilobytes
+Total memory usage is 246500 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   10 (   0 filtered)
