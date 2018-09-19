@@ -11,14 +11,15 @@ module fsm_tester_2 (
     output reg [7:0] io_seg,
     output reg [3:0] io_sel,
     input [4:0] io_button,
-    input [23:0] io_dip
+    input [23:0] io_dip,
+    output reg a,
+    output reg b,
+    output reg cin
   );
   
   
   
   localparam DIV = 5'h1a;
-  
-  localparam MAX_VALUE = 30'h23ffffff;
   
   localparam MANUAL_states = 1'd0;
   localparam AUTO_states = 1'd1;
@@ -33,10 +34,16 @@ module fsm_tester_2 (
     io_led = 24'h000000;
     io_seg = 8'hff;
     io_sel = 4'hf;
+    a = 1'h0;
+    b = 1'h0;
+    cin = 1'h0;
     
     case (M_states_q)
       MANUAL_states: begin
         M_ctr_d = 1'h1;
+        a = io_dip[0+1+0-:1];
+        b = io_dip[0+0+0-:1];
+        cin = io_dip[0+2+0-:1];
         io_led[0+0+0-:1] = (io_dip[0+1+0-:1] ^ io_dip[0+0+0-:1]) ^ io_dip[0+2+0-:1];
         io_led[0+1+0-:1] = ((io_dip[0+1+0-:1] ^ io_dip[0+0+0-:1]) & io_dip[0+2+0-:1]) | (io_dip[0+1+0-:1] & io_dip[0+0+0-:1]);
         if (io_button[1+0-:1]) begin

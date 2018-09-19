@@ -30,14 +30,14 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
 
  495 paths analyzed, 127 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   3.667ns.
+ Minimum period is   3.394ns.
 --------------------------------------------------------------------------------
-Slack:                  16.333ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_14 (FF)
+Slack:                  16.606ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_17 (FF)
   Destination:          tester/M_states_q (FF)
   Requirement:          20.000ns
-  Data Path Delay:      3.617ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.015ns (0.191 - 0.206)
+  Data Path Delay:      3.343ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.016ns (0.192 - 0.208)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -48,510 +48,33 @@ Slack:                  16.333ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_14 to tester/M_states_q
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_17 to tester/M_states_q
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y29.CQ      Tcko                  0.476   tester/M_ctr_q[15]
-                                                       tester/M_ctr_q_14
-    SLICE_X15Y29.A1      net (fanout=2)        0.755   tester/M_ctr_q[14]
-    SLICE_X15Y29.A       Tilo                  0.259   tester/_n0039_inv3
-                                                       tester/_n0039_inv3
-    SLICE_X15Y27.A2      net (fanout=1)        1.164   tester/_n0039_inv3
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
+    SLICE_X8Y30.BQ       Tcko                  0.525   tester/M_ctr_q[19]
+                                                       tester/M_ctr_q_17
+    SLICE_X9Y30.D1       net (fanout=2)        0.747   tester/M_ctr_q[17]
+    SLICE_X9Y30.D        Tilo                  0.259   tester/_n0042_inv4
+                                                       tester/_n0042_inv4
+    SLICE_X9Y27.B1       net (fanout=1)        0.950   tester/_n0042_inv4
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
                                                        tester/M_states_q_glue_set
                                                        tester/M_states_q
     -------------------------------------------------  ---------------------------
-    Total                                      3.617ns (1.258ns logic, 2.359ns route)
-                                                       (34.8% logic, 65.2% route)
+    Total                                      3.343ns (1.416ns logic, 1.927ns route)
+                                                       (42.4% logic, 57.6% route)
 
 --------------------------------------------------------------------------------
-Slack:                  16.337ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_12 (FF)
-  Destination:          tester/M_states_q (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      3.613ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.015ns (0.191 - 0.206)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_12 to tester/M_states_q
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X14Y29.AQ      Tcko                  0.476   tester/M_ctr_q[15]
-                                                       tester/M_ctr_q_12
-    SLICE_X15Y29.A2      net (fanout=2)        0.751   tester/M_ctr_q[12]
-    SLICE_X15Y29.A       Tilo                  0.259   tester/_n0039_inv3
-                                                       tester/_n0039_inv3
-    SLICE_X15Y27.A2      net (fanout=1)        1.164   tester/_n0039_inv3
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
-                                                       tester/M_states_q_glue_set
-                                                       tester/M_states_q
-    -------------------------------------------------  ---------------------------
-    Total                                      3.613ns (1.258ns logic, 2.355ns route)
-                                                       (34.8% logic, 65.2% route)
-
---------------------------------------------------------------------------------
-Slack:                  16.537ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_11 (FF)
-  Destination:          tester/M_states_q (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      3.415ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.013ns (0.191 - 0.204)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_11 to tester/M_states_q
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X14Y28.DQ      Tcko                  0.476   tester/M_ctr_q[11]
-                                                       tester/M_ctr_q_11
-    SLICE_X15Y29.A3      net (fanout=2)        0.553   tester/M_ctr_q[11]
-    SLICE_X15Y29.A       Tilo                  0.259   tester/_n0039_inv3
-                                                       tester/_n0039_inv3
-    SLICE_X15Y27.A2      net (fanout=1)        1.164   tester/_n0039_inv3
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
-                                                       tester/M_states_q_glue_set
-                                                       tester/M_states_q
-    -------------------------------------------------  ---------------------------
-    Total                                      3.415ns (1.258ns logic, 2.157ns route)
-                                                       (36.8% logic, 63.2% route)
-
---------------------------------------------------------------------------------
-Slack:                  16.581ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_4 (FF)
-  Destination:          tester/M_states_q (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      3.373ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.011ns (0.191 - 0.202)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_4 to tester/M_states_q
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X14Y27.AQ      Tcko                  0.476   tester/M_ctr_q[7]
-                                                       tester/M_ctr_q_4
-    SLICE_X15Y27.D1      net (fanout=2)        1.316   tester/M_ctr_q[4]
-    SLICE_X15Y27.D       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv1
-    SLICE_X15Y27.A3      net (fanout=1)        0.359   tester/_n0039_inv1
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
-                                                       tester/M_states_q_glue_set
-                                                       tester/M_states_q
-    -------------------------------------------------  ---------------------------
-    Total                                      3.373ns (1.258ns logic, 2.115ns route)
-                                                       (37.3% logic, 62.7% route)
-
---------------------------------------------------------------------------------
-Slack:                  16.581ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_15 (FF)
-  Destination:          tester/M_states_q (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      3.369ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.015ns (0.191 - 0.206)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_15 to tester/M_states_q
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X14Y29.DQ      Tcko                  0.476   tester/M_ctr_q[15]
-                                                       tester/M_ctr_q_15
-    SLICE_X15Y29.A4      net (fanout=2)        0.507   tester/M_ctr_q[15]
-    SLICE_X15Y29.A       Tilo                  0.259   tester/_n0039_inv3
-                                                       tester/_n0039_inv3
-    SLICE_X15Y27.A2      net (fanout=1)        1.164   tester/_n0039_inv3
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
-                                                       tester/M_states_q_glue_set
-                                                       tester/M_states_q
-    -------------------------------------------------  ---------------------------
-    Total                                      3.369ns (1.258ns logic, 2.111ns route)
-                                                       (37.3% logic, 62.7% route)
-
---------------------------------------------------------------------------------
-Slack:                  16.750ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_16 (FF)
-  Destination:          tester/M_states_q (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      3.199ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.016ns (0.191 - 0.207)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_16 to tester/M_states_q
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X14Y30.AQ      Tcko                  0.476   tester/M_ctr_q[19]
-                                                       tester/M_ctr_q_16
-    SLICE_X15Y29.A6      net (fanout=2)        0.337   tester/M_ctr_q[16]
-    SLICE_X15Y29.A       Tilo                  0.259   tester/_n0039_inv3
-                                                       tester/_n0039_inv3
-    SLICE_X15Y27.A2      net (fanout=1)        1.164   tester/_n0039_inv3
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
-                                                       tester/M_states_q_glue_set
-                                                       tester/M_states_q
-    -------------------------------------------------  ---------------------------
-    Total                                      3.199ns (1.258ns logic, 1.941ns route)
-                                                       (39.3% logic, 60.7% route)
-
---------------------------------------------------------------------------------
-Slack:                  16.847ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_13 (FF)
-  Destination:          tester/M_states_q (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      3.103ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.015ns (0.191 - 0.206)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_13 to tester/M_states_q
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X14Y29.BQ      Tcko                  0.476   tester/M_ctr_q[15]
-                                                       tester/M_ctr_q_13
-    SLICE_X15Y29.A5      net (fanout=2)        0.241   tester/M_ctr_q[13]
-    SLICE_X15Y29.A       Tilo                  0.259   tester/_n0039_inv3
-                                                       tester/_n0039_inv3
-    SLICE_X15Y27.A2      net (fanout=1)        1.164   tester/_n0039_inv3
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
-                                                       tester/M_states_q_glue_set
-                                                       tester/M_states_q
-    -------------------------------------------------  ---------------------------
-    Total                                      3.103ns (1.258ns logic, 1.845ns route)
-                                                       (40.5% logic, 59.5% route)
-
---------------------------------------------------------------------------------
-Slack:                  16.866ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_24 (FF)
-  Destination:          tester/M_states_q (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      3.066ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.033ns (0.684 - 0.717)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_24 to tester/M_states_q
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X14Y32.AQ      Tcko                  0.476   tester/M_ctr_q[27]
-                                                       tester/M_ctr_q_24
-    SLICE_X15Y32.A1      net (fanout=2)        0.748   tester/M_ctr_q[24]
-    SLICE_X15Y32.A       Tilo                  0.259   tester/_n0039_inv5
-                                                       tester/_n0039_inv5
-    SLICE_X15Y27.A6      net (fanout=1)        0.620   tester/_n0039_inv5
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
-                                                       tester/M_states_q_glue_set
-                                                       tester/M_states_q
-    -------------------------------------------------  ---------------------------
-    Total                                      3.066ns (1.258ns logic, 1.808ns route)
-                                                       (41.0% logic, 59.0% route)
-
---------------------------------------------------------------------------------
-Slack:                  16.889ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_20 (FF)
-  Destination:          tester/M_states_q (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      3.059ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.017ns (0.191 - 0.208)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_20 to tester/M_states_q
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X14Y31.AQ      Tcko                  0.476   tester/M_ctr_q[23]
-                                                       tester/M_ctr_q_20
-    SLICE_X15Y30.A1      net (fanout=2)        0.733   tester/M_ctr_q[20]
-    SLICE_X15Y30.A       Tilo                  0.259   tester/_n0039_inv4
-                                                       tester/_n0039_inv4
-    SLICE_X15Y27.A5      net (fanout=1)        0.628   tester/_n0039_inv4
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
-                                                       tester/M_states_q_glue_set
-                                                       tester/M_states_q
-    -------------------------------------------------  ---------------------------
-    Total                                      3.059ns (1.258ns logic, 1.801ns route)
-                                                       (41.1% logic, 58.9% route)
-
---------------------------------------------------------------------------------
-Slack:                  16.969ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_states_q (FF)
-  Destination:          tester/M_ctr_q_28 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      2.971ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.025ns (0.688 - 0.713)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_states_q to tester/M_ctr_q_28
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X15Y27.BMUX    Tshcko                0.518   tester/_n0039_inv1
-                                                       tester/M_states_q
-    SLICE_X15Y27.C5      net (fanout=6)        0.428   M_states_q
-    SLICE_X15Y27.C       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/Mcount_M_ctr_q_val1
-    SLICE_X14Y33.SR      net (fanout=8)        1.348   tester/Mcount_M_ctr_q_val
-    SLICE_X14Y33.CLK     Tsrck                 0.418   tester/M_ctr_q[28]
-                                                       tester/M_ctr_q_28
-    -------------------------------------------------  ---------------------------
-    Total                                      2.971ns (1.195ns logic, 1.776ns route)
-                                                       (40.2% logic, 59.8% route)
-
---------------------------------------------------------------------------------
-Slack:                  17.017ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_10 (FF)
-  Destination:          tester/M_states_q (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      2.935ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.013ns (0.191 - 0.204)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_10 to tester/M_states_q
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X14Y28.CQ      Tcko                  0.476   tester/M_ctr_q[11]
-                                                       tester/M_ctr_q_10
-    SLICE_X15Y28.A1      net (fanout=2)        0.755   tester/M_ctr_q[10]
-    SLICE_X15Y28.A       Tilo                  0.259   tester/_n0039_inv2
-                                                       tester/_n0039_inv2
-    SLICE_X15Y27.A4      net (fanout=1)        0.482   tester/_n0039_inv2
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
-                                                       tester/M_states_q_glue_set
-                                                       tester/M_states_q
-    -------------------------------------------------  ---------------------------
-    Total                                      2.935ns (1.258ns logic, 1.677ns route)
-                                                       (42.9% logic, 57.1% route)
-
---------------------------------------------------------------------------------
-Slack:                  17.021ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_8 (FF)
-  Destination:          tester/M_states_q (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      2.931ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.013ns (0.191 - 0.204)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_8 to tester/M_states_q
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X14Y28.AQ      Tcko                  0.476   tester/M_ctr_q[11]
-                                                       tester/M_ctr_q_8
-    SLICE_X15Y28.A2      net (fanout=2)        0.751   tester/M_ctr_q[8]
-    SLICE_X15Y28.A       Tilo                  0.259   tester/_n0039_inv2
-                                                       tester/_n0039_inv2
-    SLICE_X15Y27.A4      net (fanout=1)        0.482   tester/_n0039_inv2
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
-                                                       tester/M_states_q_glue_set
-                                                       tester/M_states_q
-    -------------------------------------------------  ---------------------------
-    Total                                      2.931ns (1.258ns logic, 1.673ns route)
-                                                       (42.9% logic, 57.1% route)
-
---------------------------------------------------------------------------------
-Slack:                  17.039ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_23 (FF)
-  Destination:          tester/M_states_q (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      2.909ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.017ns (0.191 - 0.208)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_23 to tester/M_states_q
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X14Y31.DQ      Tcko                  0.476   tester/M_ctr_q[23]
-                                                       tester/M_ctr_q_23
-    SLICE_X15Y32.A3      net (fanout=2)        0.591   tester/M_ctr_q[23]
-    SLICE_X15Y32.A       Tilo                  0.259   tester/_n0039_inv5
-                                                       tester/_n0039_inv5
-    SLICE_X15Y27.A6      net (fanout=1)        0.620   tester/_n0039_inv5
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
-                                                       tester/M_states_q_glue_set
-                                                       tester/M_states_q
-    -------------------------------------------------  ---------------------------
-    Total                                      2.909ns (1.258ns logic, 1.651ns route)
-                                                       (43.2% logic, 56.8% route)
-
---------------------------------------------------------------------------------
-Slack:                  17.053ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_26 (FF)
-  Destination:          tester/M_states_q (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      2.879ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.033ns (0.684 - 0.717)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_26 to tester/M_states_q
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X14Y32.CQ      Tcko                  0.476   tester/M_ctr_q[27]
-                                                       tester/M_ctr_q_26
-    SLICE_X15Y32.A2      net (fanout=3)        0.561   tester/M_ctr_q[26]
-    SLICE_X15Y32.A       Tilo                  0.259   tester/_n0039_inv5
-                                                       tester/_n0039_inv5
-    SLICE_X15Y27.A6      net (fanout=1)        0.620   tester/_n0039_inv5
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
-                                                       tester/M_states_q_glue_set
-                                                       tester/M_states_q
-    -------------------------------------------------  ---------------------------
-    Total                                      2.879ns (1.258ns logic, 1.621ns route)
-                                                       (43.7% logic, 56.3% route)
-
---------------------------------------------------------------------------------
-Slack:                  17.066ns (requirement - (data path - clock path skew + uncertainty))
+Slack:                  16.616ns (requirement - (data path - clock path skew + uncertainty))
   Source:               tester/M_ctr_q_19 (FF)
   Destination:          tester/M_states_q (FF)
   Requirement:          20.000ns
-  Data Path Delay:      2.883ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.016ns (0.191 - 0.207)
+  Data Path Delay:      3.333ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.016ns (0.192 - 0.208)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -566,66 +89,29 @@ Slack:                  17.066ns (requirement - (data path - clock path skew + u
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y30.DQ      Tcko                  0.476   tester/M_ctr_q[19]
+    SLICE_X8Y30.DQ       Tcko                  0.525   tester/M_ctr_q[19]
                                                        tester/M_ctr_q_19
-    SLICE_X15Y30.A6      net (fanout=2)        0.557   tester/M_ctr_q[19]
-    SLICE_X15Y30.A       Tilo                  0.259   tester/_n0039_inv4
-                                                       tester/_n0039_inv4
-    SLICE_X15Y27.A5      net (fanout=1)        0.628   tester/_n0039_inv4
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
+    SLICE_X9Y30.D2       net (fanout=2)        0.737   tester/M_ctr_q[19]
+    SLICE_X9Y30.D        Tilo                  0.259   tester/_n0042_inv4
+                                                       tester/_n0042_inv4
+    SLICE_X9Y27.B1       net (fanout=1)        0.950   tester/_n0042_inv4
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
                                                        tester/M_states_q_glue_set
                                                        tester/M_states_q
     -------------------------------------------------  ---------------------------
-    Total                                      2.883ns (1.258ns logic, 1.625ns route)
-                                                       (43.6% logic, 56.4% route)
+    Total                                      3.333ns (1.416ns logic, 1.917ns route)
+                                                       (42.5% logic, 57.5% route)
 
 --------------------------------------------------------------------------------
-Slack:                  17.069ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_21 (FF)
-  Destination:          tester/M_states_q (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      2.879ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.017ns (0.191 - 0.208)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_21 to tester/M_states_q
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X14Y31.BQ      Tcko                  0.476   tester/M_ctr_q[23]
-                                                       tester/M_ctr_q_21
-    SLICE_X15Y30.A3      net (fanout=2)        0.553   tester/M_ctr_q[21]
-    SLICE_X15Y30.A       Tilo                  0.259   tester/_n0039_inv4
-                                                       tester/_n0039_inv4
-    SLICE_X15Y27.A5      net (fanout=1)        0.628   tester/_n0039_inv4
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
-                                                       tester/M_states_q_glue_set
-                                                       tester/M_states_q
-    -------------------------------------------------  ---------------------------
-    Total                                      2.879ns (1.258ns logic, 1.621ns route)
-                                                       (43.7% logic, 56.3% route)
-
---------------------------------------------------------------------------------
-Slack:                  17.070ns (requirement - (data path - clock path skew + uncertainty))
+Slack:                  16.746ns (requirement - (data path - clock path skew + uncertainty))
   Source:               tester/M_ctr_q_18 (FF)
   Destination:          tester/M_states_q (FF)
   Requirement:          20.000ns
-  Data Path Delay:      2.879ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.016ns (0.191 - 0.207)
+  Data Path Delay:      3.203ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.016ns (0.192 - 0.208)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -640,29 +126,29 @@ Slack:                  17.070ns (requirement - (data path - clock path skew + u
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y30.CQ      Tcko                  0.476   tester/M_ctr_q[19]
+    SLICE_X8Y30.CQ       Tcko                  0.525   tester/M_ctr_q[19]
                                                        tester/M_ctr_q_18
-    SLICE_X15Y30.A2      net (fanout=2)        0.553   tester/M_ctr_q[18]
-    SLICE_X15Y30.A       Tilo                  0.259   tester/_n0039_inv4
-                                                       tester/_n0039_inv4
-    SLICE_X15Y27.A5      net (fanout=1)        0.628   tester/_n0039_inv4
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
+    SLICE_X9Y30.D3       net (fanout=2)        0.607   tester/M_ctr_q[18]
+    SLICE_X9Y30.D        Tilo                  0.259   tester/_n0042_inv4
+                                                       tester/_n0042_inv4
+    SLICE_X9Y27.B1       net (fanout=1)        0.950   tester/_n0042_inv4
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
                                                        tester/M_states_q_glue_set
                                                        tester/M_states_q
     -------------------------------------------------  ---------------------------
-    Total                                      2.879ns (1.258ns logic, 1.621ns route)
-                                                       (43.7% logic, 56.3% route)
+    Total                                      3.203ns (1.416ns logic, 1.787ns route)
+                                                       (44.2% logic, 55.8% route)
 
 --------------------------------------------------------------------------------
-Slack:                  17.077ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_6 (FF)
+Slack:                  16.826ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_24 (FF)
   Destination:          tester/M_states_q (FF)
   Requirement:          20.000ns
-  Data Path Delay:      2.877ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.011ns (0.191 - 0.202)
+  Data Path Delay:      3.106ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.033ns (0.713 - 0.746)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -673,33 +159,329 @@ Slack:                  17.077ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_6 to tester/M_states_q
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_24 to tester/M_states_q
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y27.CQ      Tcko                  0.476   tester/M_ctr_q[7]
-                                                       tester/M_ctr_q_6
-    SLICE_X15Y28.A4      net (fanout=2)        0.697   tester/M_ctr_q[6]
-    SLICE_X15Y28.A       Tilo                  0.259   tester/_n0039_inv2
-                                                       tester/_n0039_inv2
-    SLICE_X15Y27.A4      net (fanout=1)        0.482   tester/_n0039_inv2
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
+    SLICE_X8Y32.AQ       Tcko                  0.525   tester/M_ctr_q[27]
+                                                       tester/M_ctr_q_24
+    SLICE_X9Y32.A1       net (fanout=2)        0.748   tester/M_ctr_q[24]
+    SLICE_X9Y32.A        Tilo                  0.259   tester/_n0042_inv5
+                                                       tester/_n0042_inv5
+    SLICE_X9Y27.B5       net (fanout=1)        0.712   tester/_n0042_inv5
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
                                                        tester/M_states_q_glue_set
                                                        tester/M_states_q
     -------------------------------------------------  ---------------------------
-    Total                                      2.877ns (1.258ns logic, 1.619ns route)
-                                                       (43.7% logic, 56.3% route)
+    Total                                      3.106ns (1.416ns logic, 1.690ns route)
+                                                       (45.6% logic, 54.4% route)
 
 --------------------------------------------------------------------------------
-Slack:                  17.099ns (requirement - (data path - clock path skew + uncertainty))
+Slack:                  16.869ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_20 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.080ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.016ns (0.192 - 0.208)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_20 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y31.AQ       Tcko                  0.525   tester/M_ctr_q[23]
+                                                       tester/M_ctr_q_20
+    SLICE_X9Y30.D4       net (fanout=2)        0.484   tester/M_ctr_q[20]
+    SLICE_X9Y30.D        Tilo                  0.259   tester/_n0042_inv4
+                                                       tester/_n0042_inv4
+    SLICE_X9Y27.B1       net (fanout=1)        0.950   tester/_n0042_inv4
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      3.080ns (1.416ns logic, 1.664ns route)
+                                                       (46.0% logic, 54.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  16.925ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_21 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.024ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.016ns (0.192 - 0.208)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_21 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y31.BQ       Tcko                  0.525   tester/M_ctr_q[23]
+                                                       tester/M_ctr_q_21
+    SLICE_X9Y30.D5       net (fanout=2)        0.428   tester/M_ctr_q[21]
+    SLICE_X9Y30.D        Tilo                  0.259   tester/_n0042_inv4
+                                                       tester/_n0042_inv4
+    SLICE_X9Y27.B1       net (fanout=1)        0.950   tester/_n0042_inv4
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      3.024ns (1.416ns logic, 1.608ns route)
+                                                       (46.8% logic, 53.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  16.972ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_13 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.978ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.015ns (0.192 - 0.207)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_13 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y29.BQ       Tcko                  0.525   tester/M_ctr_q[15]
+                                                       tester/M_ctr_q_13
+    SLICE_X9Y29.D1       net (fanout=2)        0.747   tester/M_ctr_q[13]
+    SLICE_X9Y29.D        Tilo                  0.259   tester/_n0042_inv3
+                                                       tester/_n0042_inv3
+    SLICE_X9Y27.B3       net (fanout=1)        0.585   tester/_n0042_inv3
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      2.978ns (1.416ns logic, 1.562ns route)
+                                                       (47.5% logic, 52.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  16.982ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_15 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.968ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.015ns (0.192 - 0.207)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_15 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y29.DQ       Tcko                  0.525   tester/M_ctr_q[15]
+                                                       tester/M_ctr_q_15
+    SLICE_X9Y29.D2       net (fanout=2)        0.737   tester/M_ctr_q[15]
+    SLICE_X9Y29.D        Tilo                  0.259   tester/_n0042_inv3
+                                                       tester/_n0042_inv3
+    SLICE_X9Y27.B3       net (fanout=1)        0.585   tester/_n0042_inv3
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      2.968ns (1.416ns logic, 1.552ns route)
+                                                       (47.7% logic, 52.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.000ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_23 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.949ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.016ns (0.192 - 0.208)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_23 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y31.DQ       Tcko                  0.525   tester/M_ctr_q[23]
+                                                       tester/M_ctr_q_23
+    SLICE_X9Y32.A3       net (fanout=2)        0.591   tester/M_ctr_q[23]
+    SLICE_X9Y32.A        Tilo                  0.259   tester/_n0042_inv5
+                                                       tester/_n0042_inv5
+    SLICE_X9Y27.B5       net (fanout=1)        0.712   tester/_n0042_inv5
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      2.949ns (1.416ns logic, 1.533ns route)
+                                                       (48.0% logic, 52.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.016ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_26 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.916ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.033ns (0.713 - 0.746)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_26 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y32.CQ       Tcko                  0.525   tester/M_ctr_q[27]
+                                                       tester/M_ctr_q_26
+    SLICE_X9Y32.A2       net (fanout=3)        0.558   tester/M_ctr_q[26]
+    SLICE_X9Y32.A        Tilo                  0.259   tester/_n0042_inv5
+                                                       tester/_n0042_inv5
+    SLICE_X9Y27.B5       net (fanout=1)        0.712   tester/_n0042_inv5
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      2.916ns (1.416ns logic, 1.500ns route)
+                                                       (48.6% logic, 51.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.016ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_22 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.933ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.016ns (0.192 - 0.208)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_22 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y31.CQ       Tcko                  0.525   tester/M_ctr_q[23]
+                                                       tester/M_ctr_q_22
+    SLICE_X9Y30.D6       net (fanout=2)        0.337   tester/M_ctr_q[22]
+    SLICE_X9Y30.D        Tilo                  0.259   tester/_n0042_inv4
+                                                       tester/_n0042_inv4
+    SLICE_X9Y27.B1       net (fanout=1)        0.950   tester/_n0042_inv4
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      2.933ns (1.416ns logic, 1.517ns route)
+                                                       (48.3% logic, 51.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.043ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_2 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.914ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.008ns (0.192 - 0.200)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_2 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y26.CQ       Tcko                  0.525   tester/M_ctr_q[3]
+                                                       tester/M_ctr_q_2
+    SLICE_X9Y27.D1       net (fanout=2)        0.725   tester/M_ctr_q[2]
+    SLICE_X9Y27.D        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv1
+    SLICE_X9Y27.B2       net (fanout=1)        0.543   tester/_n0042_inv1
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      2.914ns (1.416ns logic, 1.498ns route)
+                                                       (48.6% logic, 51.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.062ns (requirement - (data path - clock path skew + uncertainty))
   Source:               tester/M_ctr_q_27 (FF)
   Destination:          tester/M_states_q (FF)
   Requirement:          20.000ns
-  Data Path Delay:      2.833ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.033ns (0.684 - 0.717)
+  Data Path Delay:      2.870ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.033ns (0.713 - 0.746)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -714,28 +496,28 @@ Slack:                  17.099ns (requirement - (data path - clock path skew + u
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y32.DQ      Tcko                  0.476   tester/M_ctr_q[27]
+    SLICE_X8Y32.DQ       Tcko                  0.525   tester/M_ctr_q[27]
                                                        tester/M_ctr_q_27
-    SLICE_X15Y32.A4      net (fanout=3)        0.515   tester/M_ctr_q[27]
-    SLICE_X15Y32.A       Tilo                  0.259   tester/_n0039_inv5
-                                                       tester/_n0039_inv5
-    SLICE_X15Y27.A6      net (fanout=1)        0.620   tester/_n0039_inv5
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
+    SLICE_X9Y32.A4       net (fanout=3)        0.512   tester/M_ctr_q[27]
+    SLICE_X9Y32.A        Tilo                  0.259   tester/_n0042_inv5
+                                                       tester/_n0042_inv5
+    SLICE_X9Y27.B5       net (fanout=1)        0.712   tester/_n0042_inv5
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
                                                        tester/M_states_q_glue_set
                                                        tester/M_states_q
     -------------------------------------------------  ---------------------------
-    Total                                      2.833ns (1.258ns logic, 1.575ns route)
-                                                       (44.4% logic, 55.6% route)
+    Total                                      2.870ns (1.416ns logic, 1.454ns route)
+                                                       (49.3% logic, 50.7% route)
 
 --------------------------------------------------------------------------------
-Slack:                  17.111ns (requirement - (data path - clock path skew + uncertainty))
+Slack:                  17.095ns (requirement - (data path - clock path skew + uncertainty))
   Source:               tester/M_states_q (FF)
   Destination:          tester/M_states_q (FF)
   Requirement:          20.000ns
-  Data Path Delay:      2.854ns (Levels of Logic = 3)
+  Data Path Delay:      2.870ns (Levels of Logic = 3)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
@@ -751,29 +533,29 @@ Slack:                  17.111ns (requirement - (data path - clock path skew + u
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X15Y27.BMUX    Tshcko                0.518   tester/_n0039_inv1
+    SLICE_X9Y27.AQ       Tcko                  0.430   M_states_q
                                                        tester/M_states_q
-    SLICE_X15Y27.D2      net (fanout=6)        0.755   M_states_q
-    SLICE_X15Y27.D       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv1
-    SLICE_X15Y27.A3      net (fanout=1)        0.359   tester/_n0039_inv1
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
+    SLICE_X9Y27.D2       net (fanout=8)        0.776   M_states_q
+    SLICE_X9Y27.D        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv1
+    SLICE_X9Y27.B2       net (fanout=1)        0.543   tester/_n0042_inv1
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
                                                        tester/M_states_q_glue_set
                                                        tester/M_states_q
     -------------------------------------------------  ---------------------------
-    Total                                      2.854ns (1.300ns logic, 1.554ns route)
-                                                       (45.6% logic, 54.4% route)
+    Total                                      2.870ns (1.321ns logic, 1.549ns route)
+                                                       (46.0% logic, 54.0% route)
 
 --------------------------------------------------------------------------------
-Slack:                  17.130ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_22 (FF)
+Slack:                  17.205ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_10 (FF)
   Destination:          tester/M_states_q (FF)
   Requirement:          20.000ns
-  Data Path Delay:      2.818ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.017ns (0.191 - 0.208)
+  Data Path Delay:      2.747ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.013ns (0.192 - 0.205)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -784,33 +566,33 @@ Slack:                  17.130ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_22 to tester/M_states_q
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_10 to tester/M_states_q
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y31.CQ      Tcko                  0.476   tester/M_ctr_q[23]
-                                                       tester/M_ctr_q_22
-    SLICE_X15Y30.A4      net (fanout=2)        0.492   tester/M_ctr_q[22]
-    SLICE_X15Y30.A       Tilo                  0.259   tester/_n0039_inv4
-                                                       tester/_n0039_inv4
-    SLICE_X15Y27.A5      net (fanout=1)        0.628   tester/_n0039_inv4
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
+    SLICE_X8Y28.CQ       Tcko                  0.525   tester/M_ctr_q[11]
+                                                       tester/M_ctr_q_10
+    SLICE_X10Y27.A1      net (fanout=2)        0.778   tester/M_ctr_q[10]
+    SLICE_X10Y27.A       Tilo                  0.235   tester/_n0042_inv2
+                                                       tester/_n0042_inv2
+    SLICE_X9Y27.B6       net (fanout=1)        0.347   tester/_n0042_inv2
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
                                                        tester/M_states_q_glue_set
                                                        tester/M_states_q
     -------------------------------------------------  ---------------------------
-    Total                                      2.818ns (1.258ns logic, 1.560ns route)
-                                                       (44.6% logic, 55.4% route)
+    Total                                      2.747ns (1.392ns logic, 1.355ns route)
+                                                       (50.7% logic, 49.3% route)
 
 --------------------------------------------------------------------------------
-Slack:                  17.145ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_states_q (FF)
-  Destination:          tester/M_ctr_q_25 (FF)
+Slack:                  17.229ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_28 (FF)
+  Destination:          tester/M_states_q (FF)
   Requirement:          20.000ns
-  Data Path Delay:      2.795ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.025ns (0.688 - 0.713)
+  Data Path Delay:      2.704ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.032ns (0.713 - 0.745)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -821,178 +603,33 @@ Slack:                  17.145ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: tester/M_states_q to tester/M_ctr_q_25
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_28 to tester/M_states_q
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X15Y27.BMUX    Tshcko                0.518   tester/_n0039_inv1
-                                                       tester/M_states_q
-    SLICE_X15Y27.C5      net (fanout=6)        0.428   M_states_q
-    SLICE_X15Y27.C       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/Mcount_M_ctr_q_val1
-    SLICE_X14Y32.SR      net (fanout=8)        1.161   tester/Mcount_M_ctr_q_val
-    SLICE_X14Y32.CLK     Tsrck                 0.429   tester/M_ctr_q[27]
-                                                       tester/M_ctr_q_25
-    -------------------------------------------------  ---------------------------
-    Total                                      2.795ns (1.206ns logic, 1.589ns route)
-                                                       (43.1% logic, 56.9% route)
-
---------------------------------------------------------------------------------
-Slack:                  17.156ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_states_q (FF)
-  Destination:          tester/M_ctr_q_24 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      2.784ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.025ns (0.688 - 0.713)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_states_q to tester/M_ctr_q_24
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X15Y27.BMUX    Tshcko                0.518   tester/_n0039_inv1
-                                                       tester/M_states_q
-    SLICE_X15Y27.C5      net (fanout=6)        0.428   M_states_q
-    SLICE_X15Y27.C       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/Mcount_M_ctr_q_val1
-    SLICE_X14Y32.SR      net (fanout=8)        1.161   tester/Mcount_M_ctr_q_val
-    SLICE_X14Y32.CLK     Tsrck                 0.418   tester/M_ctr_q[27]
-                                                       tester/M_ctr_q_24
-    -------------------------------------------------  ---------------------------
-    Total                                      2.784ns (1.195ns logic, 1.589ns route)
-                                                       (42.9% logic, 57.1% route)
-
---------------------------------------------------------------------------------
-Slack:                  17.179ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_states_q (FF)
-  Destination:          tester/M_ctr_q_26 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      2.761ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.025ns (0.688 - 0.713)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_states_q to tester/M_ctr_q_26
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X15Y27.BMUX    Tshcko                0.518   tester/_n0039_inv1
-                                                       tester/M_states_q
-    SLICE_X15Y27.C5      net (fanout=6)        0.428   M_states_q
-    SLICE_X15Y27.C       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/Mcount_M_ctr_q_val1
-    SLICE_X14Y32.SR      net (fanout=8)        1.161   tester/Mcount_M_ctr_q_val
-    SLICE_X14Y32.CLK     Tsrck                 0.395   tester/M_ctr_q[27]
-                                                       tester/M_ctr_q_26
-    -------------------------------------------------  ---------------------------
-    Total                                      2.761ns (1.172ns logic, 1.589ns route)
-                                                       (42.4% logic, 57.6% route)
-
---------------------------------------------------------------------------------
-Slack:                  17.193ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_states_q (FF)
-  Destination:          tester/M_ctr_q_27 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      2.747ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.025ns (0.688 - 0.713)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_states_q to tester/M_ctr_q_27
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X15Y27.BMUX    Tshcko                0.518   tester/_n0039_inv1
-                                                       tester/M_states_q
-    SLICE_X15Y27.C5      net (fanout=6)        0.428   M_states_q
-    SLICE_X15Y27.C       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/Mcount_M_ctr_q_val1
-    SLICE_X14Y32.SR      net (fanout=8)        1.161   tester/Mcount_M_ctr_q_val
-    SLICE_X14Y32.CLK     Tsrck                 0.381   tester/M_ctr_q[27]
-                                                       tester/M_ctr_q_27
-    -------------------------------------------------  ---------------------------
-    Total                                      2.747ns (1.158ns logic, 1.589ns route)
-                                                       (42.2% logic, 57.8% route)
-
---------------------------------------------------------------------------------
-Slack:                  17.196ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_4 (FF)
-  Destination:          tester/M_ctr_q_28 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      2.744ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.025ns (0.688 - 0.713)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_4 to tester/M_ctr_q_28
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X14Y27.AQ      Tcko                  0.476   tester/M_ctr_q[7]
-                                                       tester/M_ctr_q_4
-    SLICE_X14Y27.A3      net (fanout=2)        0.951   tester/M_ctr_q[4]
-    SLICE_X14Y27.COUT    Topcya                0.472   tester/M_ctr_q[7]
-                                                       tester/M_ctr_q[4]_rt
-                                                       tester/Mcount_M_ctr_q_cy<7>
-    SLICE_X14Y28.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[7]
-    SLICE_X14Y28.COUT    Tbyp                  0.091   tester/M_ctr_q[11]
-                                                       tester/Mcount_M_ctr_q_cy<11>
-    SLICE_X14Y29.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[11]
-    SLICE_X14Y29.COUT    Tbyp                  0.091   tester/M_ctr_q[15]
-                                                       tester/Mcount_M_ctr_q_cy<15>
-    SLICE_X14Y30.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[15]
-    SLICE_X14Y30.COUT    Tbyp                  0.091   tester/M_ctr_q[19]
-                                                       tester/Mcount_M_ctr_q_cy<19>
-    SLICE_X14Y31.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[19]
-    SLICE_X14Y31.COUT    Tbyp                  0.091   tester/M_ctr_q[23]
-                                                       tester/Mcount_M_ctr_q_cy<23>
-    SLICE_X14Y32.CIN     net (fanout=1)        0.135   tester/Mcount_M_ctr_q_cy[23]
-    SLICE_X14Y32.COUT    Tbyp                  0.091   tester/M_ctr_q[27]
-                                                       tester/Mcount_M_ctr_q_cy<27>
-    SLICE_X14Y33.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[27]
-    SLICE_X14Y33.CLK     Tcinck                0.240   tester/M_ctr_q[28]
-                                                       tester/Mcount_M_ctr_q_xor<28>
+    SLICE_X8Y33.AQ       Tcko                  0.525   tester/M_ctr_q[28]
                                                        tester/M_ctr_q_28
+    SLICE_X9Y32.A6       net (fanout=3)        0.346   tester/M_ctr_q[28]
+    SLICE_X9Y32.A        Tilo                  0.259   tester/_n0042_inv5
+                                                       tester/_n0042_inv5
+    SLICE_X9Y27.B5       net (fanout=1)        0.712   tester/_n0042_inv5
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
     -------------------------------------------------  ---------------------------
-    Total                                      2.744ns (1.643ns logic, 1.101ns route)
-                                                       (59.9% logic, 40.1% route)
+    Total                                      2.704ns (1.416ns logic, 1.288ns route)
+                                                       (52.4% logic, 47.6% route)
 
 --------------------------------------------------------------------------------
-Slack:                  17.211ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_4 (FF)
-  Destination:          tester/M_ctr_q_26 (FF)
+Slack:                  17.234ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_16 (FF)
+  Destination:          tester/M_states_q (FF)
   Requirement:          20.000ns
-  Data Path Delay:      2.729ns (Levels of Logic = 6)
-  Clock Path Skew:      -0.025ns (0.688 - 0.713)
+  Data Path Delay:      2.715ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.016ns (0.192 - 0.208)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1003,90 +640,33 @@ Slack:                  17.211ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_4 to tester/M_ctr_q_26
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_16 to tester/M_states_q
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y27.AQ      Tcko                  0.476   tester/M_ctr_q[7]
-                                                       tester/M_ctr_q_4
-    SLICE_X14Y27.A3      net (fanout=2)        0.951   tester/M_ctr_q[4]
-    SLICE_X14Y27.COUT    Topcya                0.472   tester/M_ctr_q[7]
-                                                       tester/M_ctr_q[4]_rt
-                                                       tester/Mcount_M_ctr_q_cy<7>
-    SLICE_X14Y28.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[7]
-    SLICE_X14Y28.COUT    Tbyp                  0.091   tester/M_ctr_q[11]
-                                                       tester/Mcount_M_ctr_q_cy<11>
-    SLICE_X14Y29.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[11]
-    SLICE_X14Y29.COUT    Tbyp                  0.091   tester/M_ctr_q[15]
-                                                       tester/Mcount_M_ctr_q_cy<15>
-    SLICE_X14Y30.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[15]
-    SLICE_X14Y30.COUT    Tbyp                  0.091   tester/M_ctr_q[19]
-                                                       tester/Mcount_M_ctr_q_cy<19>
-    SLICE_X14Y31.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[19]
-    SLICE_X14Y31.COUT    Tbyp                  0.091   tester/M_ctr_q[23]
-                                                       tester/Mcount_M_ctr_q_cy<23>
-    SLICE_X14Y32.CIN     net (fanout=1)        0.135   tester/Mcount_M_ctr_q_cy[23]
-    SLICE_X14Y32.CLK     Tcinck                0.319   tester/M_ctr_q[27]
-                                                       tester/Mcount_M_ctr_q_cy<27>
-                                                       tester/M_ctr_q_26
+    SLICE_X8Y30.AQ       Tcko                  0.525   tester/M_ctr_q[19]
+                                                       tester/M_ctr_q_16
+    SLICE_X9Y29.D4       net (fanout=2)        0.484   tester/M_ctr_q[16]
+    SLICE_X9Y29.D        Tilo                  0.259   tester/_n0042_inv3
+                                                       tester/_n0042_inv3
+    SLICE_X9Y27.B3       net (fanout=1)        0.585   tester/_n0042_inv3
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
     -------------------------------------------------  ---------------------------
-    Total                                      2.729ns (1.631ns logic, 1.098ns route)
-                                                       (59.8% logic, 40.2% route)
+    Total                                      2.715ns (1.416ns logic, 1.299ns route)
+                                                       (52.2% logic, 47.8% route)
 
 --------------------------------------------------------------------------------
-Slack:                  17.211ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_4 (FF)
-  Destination:          tester/M_ctr_q_27 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      2.729ns (Levels of Logic = 6)
-  Clock Path Skew:      -0.025ns (0.688 - 0.713)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_4 to tester/M_ctr_q_27
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X14Y27.AQ      Tcko                  0.476   tester/M_ctr_q[7]
-                                                       tester/M_ctr_q_4
-    SLICE_X14Y27.A3      net (fanout=2)        0.951   tester/M_ctr_q[4]
-    SLICE_X14Y27.COUT    Topcya                0.472   tester/M_ctr_q[7]
-                                                       tester/M_ctr_q[4]_rt
-                                                       tester/Mcount_M_ctr_q_cy<7>
-    SLICE_X14Y28.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[7]
-    SLICE_X14Y28.COUT    Tbyp                  0.091   tester/M_ctr_q[11]
-                                                       tester/Mcount_M_ctr_q_cy<11>
-    SLICE_X14Y29.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[11]
-    SLICE_X14Y29.COUT    Tbyp                  0.091   tester/M_ctr_q[15]
-                                                       tester/Mcount_M_ctr_q_cy<15>
-    SLICE_X14Y30.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[15]
-    SLICE_X14Y30.COUT    Tbyp                  0.091   tester/M_ctr_q[19]
-                                                       tester/Mcount_M_ctr_q_cy<19>
-    SLICE_X14Y31.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[19]
-    SLICE_X14Y31.COUT    Tbyp                  0.091   tester/M_ctr_q[23]
-                                                       tester/Mcount_M_ctr_q_cy<23>
-    SLICE_X14Y32.CIN     net (fanout=1)        0.135   tester/Mcount_M_ctr_q_cy[23]
-    SLICE_X14Y32.CLK     Tcinck                0.319   tester/M_ctr_q[27]
-                                                       tester/Mcount_M_ctr_q_cy<27>
-                                                       tester/M_ctr_q_27
-    -------------------------------------------------  ---------------------------
-    Total                                      2.729ns (1.631ns logic, 1.098ns route)
-                                                       (59.8% logic, 40.2% route)
-
---------------------------------------------------------------------------------
-Slack:                  17.219ns (requirement - (data path - clock path skew + uncertainty))
+Slack:                  17.275ns (requirement - (data path - clock path skew + uncertainty))
   Source:               tester/M_ctr_q_7 (FF)
   Destination:          tester/M_states_q (FF)
   Requirement:          20.000ns
-  Data Path Delay:      2.735ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.011ns (0.191 - 0.202)
+  Data Path Delay:      2.679ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.011ns (0.192 - 0.203)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1101,29 +681,29 @@ Slack:                  17.219ns (requirement - (data path - clock path skew + u
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y27.DQ      Tcko                  0.476   tester/M_ctr_q[7]
+    SLICE_X8Y27.DQ       Tcko                  0.525   tester/M_ctr_q[7]
                                                        tester/M_ctr_q_7
-    SLICE_X15Y28.A3      net (fanout=2)        0.555   tester/M_ctr_q[7]
-    SLICE_X15Y28.A       Tilo                  0.259   tester/_n0039_inv2
-                                                       tester/_n0039_inv2
-    SLICE_X15Y27.A4      net (fanout=1)        0.482   tester/_n0039_inv2
-    SLICE_X15Y27.A       Tilo                  0.259   tester/_n0039_inv1
-                                                       tester/_n0039_inv6
-    SLICE_X15Y27.B5      net (fanout=1)        0.440   tester/_n0039_inv
-    SLICE_X15Y27.CLK     Tas                   0.264   tester/_n0039_inv1
+    SLICE_X10Y27.A2      net (fanout=2)        0.710   tester/M_ctr_q[7]
+    SLICE_X10Y27.A       Tilo                  0.235   tester/_n0042_inv2
+                                                       tester/_n0042_inv2
+    SLICE_X9Y27.B6       net (fanout=1)        0.347   tester/_n0042_inv2
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
                                                        tester/M_states_q_glue_set
                                                        tester/M_states_q
     -------------------------------------------------  ---------------------------
-    Total                                      2.735ns (1.258ns logic, 1.477ns route)
-                                                       (46.0% logic, 54.0% route)
+    Total                                      2.679ns (1.392ns logic, 1.287ns route)
+                                                       (52.0% logic, 48.0% route)
 
 --------------------------------------------------------------------------------
-Slack:                  17.223ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tester/M_ctr_q_4 (FF)
-  Destination:          tester/M_ctr_q_25 (FF)
+Slack:                  17.284ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_1 (FF)
+  Destination:          tester/M_states_q (FF)
   Requirement:          20.000ns
-  Data Path Delay:      2.717ns (Levels of Logic = 6)
-  Clock Path Skew:      -0.025ns (0.688 - 0.713)
+  Data Path Delay:      2.673ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.008ns (0.192 - 0.200)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1134,35 +714,424 @@ Slack:                  17.223ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_4 to tester/M_ctr_q_25
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_1 to tester/M_states_q
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y27.AQ      Tcko                  0.476   tester/M_ctr_q[7]
-                                                       tester/M_ctr_q_4
-    SLICE_X14Y27.A3      net (fanout=2)        0.951   tester/M_ctr_q[4]
-    SLICE_X14Y27.COUT    Topcya                0.472   tester/M_ctr_q[7]
-                                                       tester/M_ctr_q[4]_rt
-                                                       tester/Mcount_M_ctr_q_cy<7>
-    SLICE_X14Y28.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[7]
-    SLICE_X14Y28.COUT    Tbyp                  0.091   tester/M_ctr_q[11]
-                                                       tester/Mcount_M_ctr_q_cy<11>
-    SLICE_X14Y29.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[11]
-    SLICE_X14Y29.COUT    Tbyp                  0.091   tester/M_ctr_q[15]
-                                                       tester/Mcount_M_ctr_q_cy<15>
-    SLICE_X14Y30.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[15]
-    SLICE_X14Y30.COUT    Tbyp                  0.091   tester/M_ctr_q[19]
-                                                       tester/Mcount_M_ctr_q_cy<19>
-    SLICE_X14Y31.CIN     net (fanout=1)        0.003   tester/Mcount_M_ctr_q_cy[19]
-    SLICE_X14Y31.COUT    Tbyp                  0.091   tester/M_ctr_q[23]
-                                                       tester/Mcount_M_ctr_q_cy<23>
-    SLICE_X14Y32.CIN     net (fanout=1)        0.135   tester/Mcount_M_ctr_q_cy[23]
-    SLICE_X14Y32.CLK     Tcinck                0.307   tester/M_ctr_q[27]
-                                                       tester/Mcount_M_ctr_q_cy<27>
-                                                       tester/M_ctr_q_25
+    SLICE_X8Y26.BQ       Tcko                  0.525   tester/M_ctr_q[3]
+                                                       tester/M_ctr_q_1
+    SLICE_X9Y27.D4       net (fanout=2)        0.484   tester/M_ctr_q[1]
+    SLICE_X9Y27.D        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv1
+    SLICE_X9Y27.B2       net (fanout=1)        0.543   tester/_n0042_inv1
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
     -------------------------------------------------  ---------------------------
-    Total                                      2.717ns (1.619ns logic, 1.098ns route)
-                                                       (59.6% logic, 40.4% route)
+    Total                                      2.673ns (1.416ns logic, 1.257ns route)
+                                                       (53.0% logic, 47.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.317ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_12 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.633ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.015ns (0.192 - 0.207)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_12 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y29.AQ       Tcko                  0.525   tester/M_ctr_q[15]
+                                                       tester/M_ctr_q_12
+    SLICE_X9Y29.D3       net (fanout=2)        0.402   tester/M_ctr_q[12]
+    SLICE_X9Y29.D        Tilo                  0.259   tester/_n0042_inv3
+                                                       tester/_n0042_inv3
+    SLICE_X9Y27.B3       net (fanout=1)        0.585   tester/_n0042_inv3
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      2.633ns (1.416ns logic, 1.217ns route)
+                                                       (53.8% logic, 46.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.322ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_4 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.632ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.011ns (0.192 - 0.203)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_4 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y27.AQ       Tcko                  0.525   tester/M_ctr_q[7]
+                                                       tester/M_ctr_q_4
+    SLICE_X9Y27.D5       net (fanout=2)        0.443   tester/M_ctr_q[4]
+    SLICE_X9Y27.D        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv1
+    SLICE_X9Y27.B2       net (fanout=1)        0.543   tester/_n0042_inv1
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      2.632ns (1.416ns logic, 1.216ns route)
+                                                       (53.8% logic, 46.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.333ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_25 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.599ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.033ns (0.713 - 0.746)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_25 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y32.BQ       Tcko                  0.525   tester/M_ctr_q[27]
+                                                       tester/M_ctr_q_25
+    SLICE_X9Y32.A5       net (fanout=2)        0.241   tester/M_ctr_q[25]
+    SLICE_X9Y32.A        Tilo                  0.259   tester/_n0042_inv5
+                                                       tester/_n0042_inv5
+    SLICE_X9Y27.B5       net (fanout=1)        0.712   tester/_n0042_inv5
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      2.599ns (1.416ns logic, 1.183ns route)
+                                                       (54.5% logic, 45.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.384ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_0 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.581ns (Levels of Logic = 3)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_0 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y27.CMUX     Tshcko                0.518   M_states_q
+                                                       tester/M_ctr_q_0
+    SLICE_X9Y27.D3       net (fanout=2)        0.399   tester/M_ctr_q[0]
+    SLICE_X9Y27.D        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv1
+    SLICE_X9Y27.B2       net (fanout=1)        0.543   tester/_n0042_inv1
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      2.581ns (1.409ns logic, 1.172ns route)
+                                                       (54.6% logic, 45.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.384ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_11 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.568ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.013ns (0.192 - 0.205)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_11 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y28.DQ       Tcko                  0.525   tester/M_ctr_q[11]
+                                                       tester/M_ctr_q_11
+    SLICE_X9Y29.D6       net (fanout=2)        0.337   tester/M_ctr_q[11]
+    SLICE_X9Y29.D        Tilo                  0.259   tester/_n0042_inv3
+                                                       tester/_n0042_inv3
+    SLICE_X9Y27.B3       net (fanout=1)        0.585   tester/_n0042_inv3
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      2.568ns (1.416ns logic, 1.152ns route)
+                                                       (55.1% logic, 44.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.421ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_6 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.533ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.011ns (0.192 - 0.203)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_6 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y27.CQ       Tcko                  0.525   tester/M_ctr_q[7]
+                                                       tester/M_ctr_q_6
+    SLICE_X10Y27.A3      net (fanout=2)        0.564   tester/M_ctr_q[6]
+    SLICE_X10Y27.A       Tilo                  0.235   tester/_n0042_inv2
+                                                       tester/_n0042_inv2
+    SLICE_X9Y27.B6       net (fanout=1)        0.347   tester/_n0042_inv2
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      2.533ns (1.392ns logic, 1.141ns route)
+                                                       (55.0% logic, 45.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.431ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_3 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.526ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.008ns (0.192 - 0.200)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_3 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y26.DQ       Tcko                  0.525   tester/M_ctr_q[3]
+                                                       tester/M_ctr_q_3
+    SLICE_X9Y27.D6       net (fanout=2)        0.337   tester/M_ctr_q[3]
+    SLICE_X9Y27.D        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv1
+    SLICE_X9Y27.B2       net (fanout=1)        0.543   tester/_n0042_inv1
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      2.526ns (1.416ns logic, 1.110ns route)
+                                                       (56.1% logic, 43.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.467ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_states_q (FF)
+  Destination:          tester/M_ctr_q_23 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.492ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.006ns (0.197 - 0.203)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_states_q to tester/M_ctr_q_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y27.AQ       Tcko                  0.430   M_states_q
+                                                       tester/M_states_q
+    SLICE_X9Y27.C3       net (fanout=8)        0.401   M_states_q
+    SLICE_X9Y27.C        Tilo                  0.259   M_states_q
+                                                       tester/Mcount_M_ctr_q_val1
+    SLICE_X8Y31.SR       net (fanout=8)        0.932   tester/Mcount_M_ctr_q_val
+    SLICE_X8Y31.CLK      Tsrck                 0.470   tester/M_ctr_q[23]
+                                                       tester/M_ctr_q_23
+    -------------------------------------------------  ---------------------------
+    Total                                      2.492ns (1.159ns logic, 1.333ns route)
+                                                       (46.5% logic, 53.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.474ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_14 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.476ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.015ns (0.192 - 0.207)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_14 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y29.CQ       Tcko                  0.525   tester/M_ctr_q[15]
+                                                       tester/M_ctr_q_14
+    SLICE_X9Y29.D5       net (fanout=2)        0.245   tester/M_ctr_q[14]
+    SLICE_X9Y29.D        Tilo                  0.259   tester/_n0042_inv3
+                                                       tester/_n0042_inv3
+    SLICE_X9Y27.B3       net (fanout=1)        0.585   tester/_n0042_inv3
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      2.476ns (1.416ns logic, 1.060ns route)
+                                                       (57.2% logic, 42.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.476ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_states_q (FF)
+  Destination:          tester/M_ctr_q_22 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.483ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.006ns (0.197 - 0.203)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_states_q to tester/M_ctr_q_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y27.AQ       Tcko                  0.430   M_states_q
+                                                       tester/M_states_q
+    SLICE_X9Y27.C3       net (fanout=8)        0.401   M_states_q
+    SLICE_X9Y27.C        Tilo                  0.259   M_states_q
+                                                       tester/Mcount_M_ctr_q_val1
+    SLICE_X8Y31.SR       net (fanout=8)        0.932   tester/Mcount_M_ctr_q_val
+    SLICE_X8Y31.CLK      Tsrck                 0.461   tester/M_ctr_q[23]
+                                                       tester/M_ctr_q_22
+    -------------------------------------------------  ---------------------------
+    Total                                      2.483ns (1.150ns logic, 1.333ns route)
+                                                       (46.3% logic, 53.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.484ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tester/M_ctr_q_5 (FF)
+  Destination:          tester/M_states_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.470ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.011ns (0.192 - 0.203)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: tester/M_ctr_q_5 to tester/M_states_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y27.BQ       Tcko                  0.525   tester/M_ctr_q[7]
+                                                       tester/M_ctr_q_5
+    SLICE_X10Y27.A4      net (fanout=2)        0.501   tester/M_ctr_q[5]
+    SLICE_X10Y27.A       Tilo                  0.235   tester/_n0042_inv2
+                                                       tester/_n0042_inv2
+    SLICE_X9Y27.B6       net (fanout=1)        0.347   tester/_n0042_inv2
+    SLICE_X9Y27.B        Tilo                  0.259   M_states_q
+                                                       tester/_n0042_inv6
+    SLICE_X9Y27.A5       net (fanout=1)        0.230   tester/_n0042_inv
+    SLICE_X9Y27.CLK      Tas                   0.373   M_states_q
+                                                       tester/M_states_q_glue_set
+                                                       tester/M_states_q
+    -------------------------------------------------  ---------------------------
+    Total                                      2.470ns (1.392ns logic, 1.078ns route)
+                                                       (56.4% logic, 43.6% route)
 
 --------------------------------------------------------------------------------
 
@@ -1176,236 +1145,236 @@ Slack: 17.334ns (period - min period limit)
   Location pin: BUFGMUX_X2Y11.I0
   Clock network: clk_BUFGP/IBUFG
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[3]/CLK
   Logical resource: tester/M_ctr_q_1/CK
-  Location pin: SLICE_X14Y26.CLK
+  Location pin: SLICE_X8Y26.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[3]/CLK
   Logical resource: tester/M_ctr_q_2/CK
-  Location pin: SLICE_X14Y26.CLK
+  Location pin: SLICE_X8Y26.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[3]/CLK
   Logical resource: tester/M_ctr_q_3/CK
-  Location pin: SLICE_X14Y26.CLK
+  Location pin: SLICE_X8Y26.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[7]/CLK
   Logical resource: tester/M_ctr_q_4/CK
-  Location pin: SLICE_X14Y27.CLK
+  Location pin: SLICE_X8Y27.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[7]/CLK
   Logical resource: tester/M_ctr_q_5/CK
-  Location pin: SLICE_X14Y27.CLK
+  Location pin: SLICE_X8Y27.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[7]/CLK
   Logical resource: tester/M_ctr_q_6/CK
-  Location pin: SLICE_X14Y27.CLK
+  Location pin: SLICE_X8Y27.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[7]/CLK
   Logical resource: tester/M_ctr_q_7/CK
-  Location pin: SLICE_X14Y27.CLK
+  Location pin: SLICE_X8Y27.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[11]/CLK
   Logical resource: tester/M_ctr_q_8/CK
-  Location pin: SLICE_X14Y28.CLK
+  Location pin: SLICE_X8Y28.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[11]/CLK
   Logical resource: tester/M_ctr_q_9/CK
-  Location pin: SLICE_X14Y28.CLK
+  Location pin: SLICE_X8Y28.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[11]/CLK
   Logical resource: tester/M_ctr_q_10/CK
-  Location pin: SLICE_X14Y28.CLK
+  Location pin: SLICE_X8Y28.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[11]/CLK
   Logical resource: tester/M_ctr_q_11/CK
-  Location pin: SLICE_X14Y28.CLK
+  Location pin: SLICE_X8Y28.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[15]/CLK
   Logical resource: tester/M_ctr_q_12/CK
-  Location pin: SLICE_X14Y29.CLK
+  Location pin: SLICE_X8Y29.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[15]/CLK
   Logical resource: tester/M_ctr_q_13/CK
-  Location pin: SLICE_X14Y29.CLK
+  Location pin: SLICE_X8Y29.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[15]/CLK
   Logical resource: tester/M_ctr_q_14/CK
-  Location pin: SLICE_X14Y29.CLK
+  Location pin: SLICE_X8Y29.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[15]/CLK
   Logical resource: tester/M_ctr_q_15/CK
-  Location pin: SLICE_X14Y29.CLK
+  Location pin: SLICE_X8Y29.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[19]/CLK
   Logical resource: tester/M_ctr_q_16/CK
-  Location pin: SLICE_X14Y30.CLK
+  Location pin: SLICE_X8Y30.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[19]/CLK
   Logical resource: tester/M_ctr_q_17/CK
-  Location pin: SLICE_X14Y30.CLK
+  Location pin: SLICE_X8Y30.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[19]/CLK
   Logical resource: tester/M_ctr_q_18/CK
-  Location pin: SLICE_X14Y30.CLK
+  Location pin: SLICE_X8Y30.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[19]/CLK
   Logical resource: tester/M_ctr_q_19/CK
-  Location pin: SLICE_X14Y30.CLK
+  Location pin: SLICE_X8Y30.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[23]/CLK
   Logical resource: tester/M_ctr_q_20/CK
-  Location pin: SLICE_X14Y31.CLK
+  Location pin: SLICE_X8Y31.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[23]/CLK
   Logical resource: tester/M_ctr_q_21/CK
-  Location pin: SLICE_X14Y31.CLK
+  Location pin: SLICE_X8Y31.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[23]/CLK
   Logical resource: tester/M_ctr_q_22/CK
-  Location pin: SLICE_X14Y31.CLK
+  Location pin: SLICE_X8Y31.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[23]/CLK
   Logical resource: tester/M_ctr_q_23/CK
-  Location pin: SLICE_X14Y31.CLK
+  Location pin: SLICE_X8Y31.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[27]/CLK
   Logical resource: tester/M_ctr_q_24/CK
-  Location pin: SLICE_X14Y32.CLK
+  Location pin: SLICE_X8Y32.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[27]/CLK
   Logical resource: tester/M_ctr_q_25/CK
-  Location pin: SLICE_X14Y32.CLK
+  Location pin: SLICE_X8Y32.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[27]/CLK
   Logical resource: tester/M_ctr_q_26/CK
-  Location pin: SLICE_X14Y32.CLK
+  Location pin: SLICE_X8Y32.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[27]/CLK
   Logical resource: tester/M_ctr_q_27/CK
-  Location pin: SLICE_X14Y32.CLK
+  Location pin: SLICE_X8Y32.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: tester/M_ctr_q[28]/CLK
   Logical resource: tester/M_ctr_q_28/CK
-  Location pin: SLICE_X14Y33.CLK
+  Location pin: SLICE_X8Y33.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.530ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: tester/_n0039_inv1/CLK
+  Physical resource: M_states_q/CLK
   Logical resource: tester/M_states_q/CK
-  Location pin: SLICE_X15Y27.CLK
+  Location pin: SLICE_X9Y27.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -1422,7 +1391,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    3.667|         |         |         |
+clk            |    3.394|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -1434,13 +1403,13 @@ Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 Constraints cover 495 paths, 0 nets, and 93 connections
 
 Design statistics:
-   Minimum period:   3.667ns{1}   (Maximum frequency: 272.702MHz)
+   Minimum period:   3.394ns{1}   (Maximum frequency: 294.638MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Wed Sep 19 22:59:14 2018 
+Analysis completed Thu Sep 20 01:12:42 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:

@@ -21,7 +21,10 @@ module mojo_top_0 (
     output reg [7:0] io_seg,
     output reg [3:0] io_sel,
     input [4:0] io_button,
-    input [23:0] io_dip
+    input [23:0] io_dip,
+    output reg a,
+    output reg b,
+    output reg cin
   );
   
   
@@ -38,6 +41,9 @@ module mojo_top_0 (
   wire [24-1:0] M_tester_io_led;
   wire [8-1:0] M_tester_io_seg;
   wire [4-1:0] M_tester_io_sel;
+  wire [1-1:0] M_tester_a;
+  wire [1-1:0] M_tester_b;
+  wire [1-1:0] M_tester_cin;
   reg [5-1:0] M_tester_io_button;
   reg [24-1:0] M_tester_io_dip;
   fsm_tester_2 tester (
@@ -47,7 +53,10 @@ module mojo_top_0 (
     .io_dip(M_tester_io_dip),
     .io_led(M_tester_io_led),
     .io_seg(M_tester_io_seg),
-    .io_sel(M_tester_io_sel)
+    .io_sel(M_tester_io_sel),
+    .a(M_tester_a),
+    .b(M_tester_b),
+    .cin(M_tester_cin)
   );
   
   always @* begin
@@ -63,5 +72,8 @@ module mojo_top_0 (
     M_tester_io_button = io_button;
     M_tester_io_dip = io_dip;
     io_led = M_tester_io_led;
+    a = M_tester_a;
+    b = M_tester_b;
+    cin = M_tester_cin;
   end
 endmodule
