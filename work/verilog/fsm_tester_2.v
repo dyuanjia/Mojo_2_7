@@ -16,17 +16,19 @@ module fsm_tester_2 (
   
   
   
-  localparam NUM_CASES = 4'h8;
+  localparam DIV = 5'h1a;
+  
+  localparam MAX_VALUE = 30'h23ffffff;
   
   localparam MANUAL_states = 1'd0;
   localparam AUTO_states = 1'd1;
   
   reg M_states_d, M_states_q = MANUAL_states;
-  reg [2:0] M_count_d, M_count_q = 1'h0;
+  reg [28:0] M_ctr_d, M_ctr_q = 1'h0;
   
   always @* begin
     M_states_d = M_states_q;
-    M_count_d = M_count_q;
+    M_ctr_d = M_ctr_q;
     
     io_led = 24'h000000;
     io_seg = 8'hff;
@@ -34,6 +36,7 @@ module fsm_tester_2 (
     
     case (M_states_q)
       MANUAL_states: begin
+        M_ctr_d = 1'h1;
         io_led[0+0+0-:1] = (io_dip[0+1+0-:1] ^ io_dip[0+0+0-:1]) ^ io_dip[0+2+0-:1];
         io_led[0+1+0-:1] = ((io_dip[0+1+0-:1] ^ io_dip[0+0+0-:1]) & io_dip[0+2+0-:1]) | (io_dip[0+1+0-:1] & io_dip[0+0+0-:1]);
         if (io_button[1+0-:1]) begin
@@ -41,8 +44,9 @@ module fsm_tester_2 (
         end
       end
       AUTO_states: begin
-        M_count_d = M_count_q + 1'h1;
-        if (M_count_q == 5'h07) begin
+        io_led[8+0+2-:3] = M_ctr_q[26+2-:3];
+        M_ctr_d = M_ctr_q + 1'h1;
+        if (M_ctr_q == 1'h0) begin
           M_states_d = MANUAL_states;
         end
       end
@@ -50,11 +54,11 @@ module fsm_tester_2 (
   end
   
   always @(posedge clk) begin
-    M_count_q <= M_count_d;
-    
     if (rst == 1'b1) begin
+      M_ctr_q <= 1'h0;
       M_states_q <= 1'h0;
     end else begin
+      M_ctr_q <= M_ctr_d;
       M_states_q <= M_states_d;
     end
   end

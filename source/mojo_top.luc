@@ -43,9 +43,11 @@ module mojo_top (
     io_seg = 8hff;          // turn segments off
     io_sel = 4hf;           // select no digits
     
-    tester.io_button = io_button[1];
+    // connect the inputs
+    tester.io_button = io_button;
     tester.io_dip = io_dip;
-    io_led[0][0] = tester.io_led[0][0];
-    io_led[0][1] = tester.io_led[0][1];
+    
+    //connect the outputs
+    io_led = tester.io_led;
   }
 }

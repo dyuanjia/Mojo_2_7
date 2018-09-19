@@ -3,7 +3,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> Reading design: mojo_top_0.prj
 
@@ -80,8 +80,6 @@ WARNING:Xst:2972 - "C:/Users/77900/OneDrive/Documents/mojo/minihardware_2_7/work
 
 Synthesizing Unit <mojo_top_0>.
     Related source file is "C:/Users/77900/OneDrive/Documents/mojo/minihardware_2_7/work/planAhead/minihardware_2_7/minihardware_2_7.srcs/sources_1/imports/verilog/mojo_top_0.v".
-WARNING:Xst:647 - Input <io_button<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <io_button<4:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -107,11 +105,11 @@ WARNING:Xst:647 - Input <io_button<0:0>> is never used. This port will be preser
 WARNING:Xst:647 - Input <io_button<4:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <io_dip<23:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <M_states_q>.
-    Found 3-bit register for signal <M_count_q>.
-    Found 3-bit adder for signal <M_count_q[2]_GND_3_o_add_0_OUT> created at line 44.
+    Found 29-bit register for signal <M_ctr_q>.
+    Found 29-bit adder for signal <M_ctr_q[28]_GND_3_o_add_0_OUT> created at line 48.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred   4 D-type flip-flop(s).
+	inferred  30 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
 Unit <fsm_tester_2> synthesized.
 
@@ -120,10 +118,10 @@ HDL Synthesis Report
 
 Macro Statistics
 # Adders/Subtractors                                   : 1
- 3-bit adder                                           : 1
+ 29-bit adder                                          : 1
 # Registers                                            : 2
  1-bit register                                        : 1
- 3-bit register                                        : 1
+ 29-bit register                                       : 1
 # Multiplexers                                         : 1
  24-bit 2-to-1 multiplexer                             : 1
 # Tristates                                            : 6
@@ -139,7 +137,7 @@ Macro Statistics
 
 
 Synthesizing (advanced) Unit <fsm_tester_2>.
-The following registers are absorbed into counter <M_count_q>: 1 register on signal <M_count_q>.
+The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
 Unit <fsm_tester_2> synthesized (advanced).
 
 =========================================================================
@@ -147,9 +145,11 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # Counters                                             : 1
- 3-bit up counter                                      : 1
+ 29-bit up counter                                     : 1
 # Registers                                            : 1
  Flip-Flops                                            : 1
+# Multiplexers                                         : 1
+ 24-bit 2-to-1 multiplexer                             : 1
 # Xors                                                 : 2
  1-bit xor2                                            : 2
 
@@ -158,7 +158,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1293 - FF/Latch <M_states_q> has a constant value of 0 in block <fsm_tester_2>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <mojo_top_0> ...
 
@@ -171,7 +170,10 @@ Final Macro Processing ...
 =========================================================================
 Final Register Report
 
-Found no macro
+Macro Statistics
+# Registers                                            : 30
+ Flip-Flops                                            : 30
+
 =========================================================================
 
 =========================================================================
@@ -193,12 +195,24 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 4
-#      GND                         : 1
+# BELS                             : 105
+#      GND                         : 2
+#      INV                         : 2
+#      LUT1                        : 28
+#      LUT2                        : 4
 #      LUT3                        : 2
-#      VCC                         : 1
-# IO Buffers                       : 53
-#      IBUF                        : 3
+#      LUT4                        : 2
+#      LUT5                        : 1
+#      LUT6                        : 5
+#      MUXCY                       : 28
+#      VCC                         : 2
+#      XORCY                       : 29
+# FlipFlops/Latches                : 30
+#      FDR                         : 30
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 55
+#      IBUF                        : 5
 #      OBUF                        : 44
 #      OBUFT                       : 6
 
@@ -209,21 +223,23 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice LUTs:                    2  out of   5720     0%  
-    Number used as Logic:                 2  out of   5720     0%  
+ Number of Slice Registers:              30  out of  11440     0%  
+ Number of Slice LUTs:                   44  out of   5720     0%  
+    Number used as Logic:                44  out of   5720     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      2
-   Number with an unused Flip Flop:       2  out of      2   100%  
-   Number with an unused LUT:             0  out of      2     0%  
-   Number of fully used LUT-FF pairs:     0  out of      2     0%  
-   Number of unique control sets:         0
+ Number of LUT Flip Flop pairs used:     44
+   Number with an unused Flip Flop:      14  out of     44    31%  
+   Number with an unused LUT:             0  out of     44     0%  
+   Number of fully used LUT-FF pairs:    30  out of     44    68%  
+   Number of unique control sets:         2
 
 IO Utilization: 
  Number of IOs:                          87
- Number of bonded IOBs:                  53  out of    102    51%  
+ Number of bonded IOBs:                  56  out of    102    54%  
 
 Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
 
 ---------------------------
 Partition Resource Summary:
@@ -243,7 +259,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-No clock signals found in this design
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 30    |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -253,14 +273,80 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: No path found
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: No path found
+   Minimum period: 4.336ns (Maximum Frequency: 230.627MHz)
+   Minimum input arrival time before clock: 4.363ns
+   Maximum output required time after clock: 5.624ns
    Maximum combinational path delay: 6.110ns
 
 Timing Details:
 ---------------
 All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.336ns (frequency: 230.627MHz)
+  Total number of paths / destination ports: 495 / 58
+-------------------------------------------------------------------------
+Delay:               4.336ns (Levels of Logic = 3)
+  Source:            tester/M_ctr_q_0 (FF)
+  Destination:       tester/M_states_q (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: tester/M_ctr_q_0 to tester/M_states_q
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.525   1.181  M_ctr_q_0 (M_ctr_q_0)
+     LUT6:I0->O            1   0.254   1.112  _n0039_inv1 (_n0039_inv1)
+     LUT5:I0->O            1   0.254   0.682  _n0039_inv6 (_n0039_inv)
+     LUT3:I2->O            1   0.254   0.000  M_states_q_glue_set (M_states_q_glue_set)
+     FDR:D                     0.074          M_states_q
+    ----------------------------------------
+    Total                      4.336ns (1.361ns logic, 2.975ns route)
+                                       (31.4% logic, 68.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 32 / 32
+-------------------------------------------------------------------------
+Offset:              4.363ns (Levels of Logic = 3)
+  Source:            rst_n (PAD)
+  Destination:       tester/M_ctr_q_26 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst_n to tester/M_ctr_q_26
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.328   0.874  rst_n_IBUF (rst_n_IBUF)
+     begin scope: 'tester:rst_n_IBUF'
+     LUT2:I0->O           28   0.250   1.452  Mcount_M_ctr_q_val1 (Mcount_M_ctr_q_val)
+     FDR:R                     0.459          M_ctr_q_1
+    ----------------------------------------
+    Total                      4.363ns (2.037ns logic, 2.326ns route)
+                                       (46.7% logic, 53.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 8 / 5
+-------------------------------------------------------------------------
+Offset:              5.624ns (Levels of Logic = 3)
+  Source:            tester/M_states_q (FF)
+  Destination:       io_led<1> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: tester/M_states_q to io_led<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              9   0.525   1.252  M_states_q (M_states_q)
+     end scope: 'tester:M_states_q'
+     LUT4:I0->O            1   0.254   0.681  io_led<0>1 (io_led_0_OBUF)
+     OBUF:I->O                 2.912          io_led_0_OBUF (io_led<0>)
+    ----------------------------------------
+    Total                      5.624ns (3.691ns logic, 1.933ns route)
+                                       (65.6% logic, 34.4% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -276,7 +362,7 @@ Delay:               6.110ns (Levels of Logic = 4)
     ----------------------------------------  ------------
      IBUF:I->O             2   1.328   0.954  io_dip_1_IBUF (io_dip_1_IBUF)
      begin scope: 'tester:io_dip<1>'
-     LUT3:I0->O            1   0.235   0.681  io_dip[1]_io_dip[1]_OR_1_o1 (io_led<1>)
+     LUT4:I1->O            1   0.235   0.681  Mmux_io_led31 (io_led<1>)
      end scope: 'tester:io_led<1>'
      OBUF:I->O                 2.912          io_led_1_OBUF (io_led<1>)
     ----------------------------------------
@@ -288,17 +374,25 @@ Delay:               6.110ns (Levels of Logic = 4)
 Cross Clock Domains Report:
 --------------------------
 
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    4.336|         |         |         |
+---------------+---------+---------+---------+---------+
+
 =========================================================================
 
 
 Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 3.15 secs
+Total CPU time to Xst completion: 3.14 secs
  
 --> 
 
 Total memory usage is 247524 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   16 (   0 filtered)
+Number of warnings :   13 (   0 filtered)
 Number of infos    :    3 (   0 filtered)
 

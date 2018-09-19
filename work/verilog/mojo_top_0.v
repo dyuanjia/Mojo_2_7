@@ -60,9 +60,8 @@ module mojo_top_0 (
     io_led = 24'h000000;
     io_seg = 8'hff;
     io_sel = 4'hf;
-    M_tester_io_button = io_button[1+0-:1];
+    M_tester_io_button = io_button;
     M_tester_io_dip = io_dip;
-    io_led[0+0+0-:1] = M_tester_io_led[0+0+0-:1];
-    io_led[0+1+0-:1] = M_tester_io_led[0+1+0-:1];
+    io_led = M_tester_io_led;
   end
 endmodule
